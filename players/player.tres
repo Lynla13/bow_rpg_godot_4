@@ -1,0 +1,15 @@
+[gd_resource type="Resource" script_class="PLAYER" load_steps=2 format=3 uid="uid://jb38qwtn04kx"]
+
+[ext_resource type="Script" path="res://players/player.gd" id="1_r7164"]
+
+[resource]
+script = ExtResource("1_r7164")
+NAME = "sdasd"
+STATUS = 0
+CLASS = 0
+DETAIL = ""
+POWER = 0
+SPEED = 200
+HEALTH = 0
+MANA = 0
+DIRECTION = 0

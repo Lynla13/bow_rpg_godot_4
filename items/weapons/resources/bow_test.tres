@@ -1,0 +1,18 @@
+[gd_resource type="Resource" script_class="ITEM" load_steps=2 format=3 uid="uid://cpavne3bfhb4w"]
+
+[ext_resource type="Script" path="res://items/item.gd" id="1_s3xu5"]
+
+[resource]
+script = ExtResource("1_s3xu5")
+NAME = "Bow"
+SPEED = 0
+DAM = 0
+HEALTH = 0
+QUANTITY = 0
+TYPE = 2
+STACKABLE = false
+COMSUMABLE = false
+IS_EQUIPED = false
+DESCRIPTION = ""
+STAR = 0
+MAX_STACK = 60

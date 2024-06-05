@@ -1,0 +1,35 @@
+[gd_scene load_steps=6 format=3 uid="uid://blp3i28skiwjd"]
+
+[ext_resource type="Texture2D" uid="uid://wgn3qrkrtwou" path="res://icon.svg" id="1_4j4l8"]
+[ext_resource type="PackedScene" uid="uid://dfv8ugu624135" path="res://ui/v_slider.tscn" id="1_e4ak5"]
+[ext_resource type="Script" path="res://ui/touch_controller.gd" id="2_nqgw3"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_04ekn"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_qyic1"]
+
+[node name="HUD" type="CanvasLayer"]
+
+[node name="VSlider" parent="." instance=ExtResource("1_e4ak5")]
+
+[node name="touchController" type="PanelContainer" parent="."]
+offset_right = 40.0
+offset_bottom = 40.0
+script = ExtResource("2_nqgw3")
+
+[node name="right" type="TouchScreenButton" parent="touchController"]
+position = Vector2(178, 341)
+scale = Vector2(3.56, 2.16906)
+texture_normal = ExtResource("1_4j4l8")
+shape = SubResource("RectangleShape2D_04ekn")
+
+[node name="left" type="TouchScreenButton" parent="touchController"]
+position = Vector2(22, 338)
+scale = Vector2(3.4, 2.28906)
+texture_normal = ExtResource("1_4j4l8")
+shape = SubResource("RectangleShape2D_qyic1")
+
+[connection signal="pressed" from="touchController/right" to="touchController" method="_on_right_pressed"]
+[connection signal="released" from="touchController/right" to="touchController" method="_on_right_released"]
+[connection signal="pressed" from="touchController/left" to="touchController" method="_on_left_pressed"]
+[connection signal="released" from="touchController/left" to="touchController" method="_on_left_released"]

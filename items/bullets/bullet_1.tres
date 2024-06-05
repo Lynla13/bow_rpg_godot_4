@@ -1,0 +1,10 @@
+[gd_resource type="Resource" script_class="BULLET" load_steps=2 format=3 uid="uid://ck5qkuwjwyerx"]
+
+[ext_resource type="Script" path="res://items/bullets/bullet.gd" id="1_drn7n"]
+
+[resource]
+script = ExtResource("1_drn7n")
+NAME = ""
+LEVEL = 0
+TYPE = 0
+QUANTITY = 0

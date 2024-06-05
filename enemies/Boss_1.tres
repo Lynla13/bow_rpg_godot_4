@@ -1,0 +1,10 @@
+[gd_resource type="Resource" script_class="ENEMY" load_steps=2 format=3 uid="uid://djn6u3lbvakox"]
+
+[ext_resource type="Script" path="res://enemies/enemy.gd" id="1_dupqd"]
+
+[resource]
+script = ExtResource("1_dupqd")
+NAME = ""
+HP = 0
+ROLE = 0
+STATUS = 0

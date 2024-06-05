@@ -1,0 +1,39 @@
+[gd_scene load_steps=4 format=3 uid="uid://cihh3pramsxc3"]
+
+[ext_resource type="Texture2D" uid="uid://wgn3qrkrtwou" path="res://icon.svg" id="1_1awea"]
+[ext_resource type="PackedScene" uid="uid://bv75iulx2oydl" path="res://players/player.tscn" id="2_w4km3"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_mkhwi"]
+size = Vector2(782.216, 26.0869)
+
+[node name="Test" type="Node2D"]
+
+[node name="StaticBody2D" type="StaticBody2D" parent="."]
+
+[node name="Sprite2D" type="Sprite2D" parent="StaticBody2D"]
+position = Vector2(3053, -38)
+texture = ExtResource("1_1awea")
+
+[node name="StaticBody2D2" type="StaticBody2D" parent="."]
+
+[node name="PlayGround" type="Polygon2D" parent="StaticBody2D2"]
+position = Vector2(100.346, -8.46793)
+scale = Vector2(0.962234, 1.00553)
+invert_enabled = true
+polygon = PackedVector2Array(2657, -277, 2659.08, 1519.07, 5757.08, 1519.07, 5744, -268)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D2"]
+position = Vector2(4273, 1578.5)
+scale = Vector2(4.715, 4.715)
+shape = SubResource("RectangleShape2D_mkhwi")
+debug_color = Color(0.744774, 0.460028, 0.149556, 0.42)
+
+[node name="Polygon2D" type="Polygon2D" parent="."]
+position = Vector2(559, -419)
+polygon = PackedVector2Array(3157, 895, 3094, 1276, 3183, 1289)
+
+[node name="Player" parent="." instance=ExtResource("2_w4km3")]
+position = Vector2(4599, 968)
+
+[node name="Camera2D" type="Camera2D" parent="Player"]
+position = Vector2(-1, -12)

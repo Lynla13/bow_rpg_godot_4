@@ -1,0 +1,11 @@
+[gd_scene format=3 uid="uid://b6yx0rcvth7lg"]
+
+[node name="Bow_Test" type="Node2D"]
+
+[node name="Polygon2D" type="Polygon2D" parent="."]
+position = Vector2(85, 128)
+rotation = 3.1248
+scale = Vector2(0.43624, 1)
+color = Color(0.140447, 0.140447, 0.140447, 1)
+invert_border = 1.0
+polygon = PackedVector2Array(157.659, 39, 202.61, 32, 152.927, 132, 202.61, 223, 231, 227, 155.293, 217, 134.723, 205.346, 135.391, 131.049, 136.139, 48)

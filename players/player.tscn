@@ -1,0 +1,397 @@
+[gd_scene load_steps=19 format=3 uid="uid://bv75iulx2oydl"]
+
+[ext_resource type="Script" path="res://players/player_controller.gd" id="1_puklx"]
+[ext_resource type="Resource" uid="uid://jb38qwtn04kx" path="res://players/player.tres" id="2_dcxem"]
+[ext_resource type="Script" path="res://states/finite_state_machine.gd" id="3_1d5im"]
+[ext_resource type="Script" path="res://states/player_idle.gd" id="4_oax2p"]
+[ext_resource type="Script" path="res://states/player_hurt.gd" id="4_okw53"]
+[ext_resource type="Script" path="res://states/player_dash.gd" id="8_0ichm"]
+[ext_resource type="Script" path="res://states/player_run.gd" id="8_wmsuh"]
+[ext_resource type="PackedScene" uid="uid://dfv8ugu624135" path="res://ui/v_slider.tscn" id="9_foevr"]
+[ext_resource type="Script" path="res://states/player_walk.gd" id="9_xh0qx"]
+
+[sub_resource type="SkeletonModification2DLookAt" id="SkeletonModification2DLookAt_katwy"]
+bone_index = 0
+bone2d_node = NodePath("Upper")
+target_nodepath = NodePath("../Upper/Upper_Body_TK")
+
+[sub_resource type="SkeletonModification2DTwoBoneIK" id="SkeletonModification2DTwoBoneIK_00xam"]
+target_nodepath = NodePath("../Upper/Right_Hand_TK")
+joint_one_bone_idx = 2
+joint_one_bone2d_node = NodePath("Upper/Upper_Body/Right_Shouder")
+joint_two_bone_idx = 3
+joint_two_bone2d_node = NodePath("Upper/Upper_Body/Right_Shouder/Hand")
+
+[sub_resource type="SkeletonModification2DTwoBoneIK" id="SkeletonModification2DTwoBoneIK_apvqn"]
+target_nodepath = NodePath("../Upper/Left_Hand_TK")
+joint_one_bone_idx = 5
+joint_one_bone2d_node = NodePath("Upper/Upper_Body/Left_Shouder")
+joint_two_bone_idx = 6
+joint_two_bone2d_node = NodePath("Upper/Upper_Body/Left_Shouder/Hand")
+
+[sub_resource type="SkeletonModification2DCCDIK" id="SkeletonModification2DCCDIK_7uee6"]
+target_nodepath = NodePath("../Flip_TK")
+tip_nodepath = NodePath("Upper/Upper_Body")
+
+[sub_resource type="SkeletonModificationStack2D" id="SkeletonModificationStack2D_8iwjg"]
+enabled = true
+modification_count = 4
+modifications/0 = SubResource("SkeletonModification2DLookAt_katwy")
+modifications/1 = SubResource("SkeletonModification2DTwoBoneIK_00xam")
+modifications/2 = SubResource("SkeletonModification2DTwoBoneIK_apvqn")
+modifications/3 = SubResource("SkeletonModification2DCCDIK_7uee6")
+
+[sub_resource type="Animation" id="Animation_eogf5"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("../Skeleton2D/Upper/Upper_Body/Left_Shouder/Hand:rotation")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [-0.0023752]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("../Skeleton2D/Upper/Upper_Body/Left_Shouder:rotation")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [-0.102013]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("../Skeleton2D/Upper/Upper_Body/Right_Shouder/Hand:rotation")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [-0.0023752]
+}
+tracks/3/type = "value"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("../Skeleton2D/Upper/Upper_Body/Right_Shouder:rotation")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [-0.148278]
+}
+
+[sub_resource type="Animation" id="Animation_2anh6"]
+resource_name = "fire"
+loop_mode = 1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("../Skeleton2D/Upper/Upper_Body/Left_Shouder/Hand:rotation")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.2, 0.4, 0.6),
+"transitions": PackedFloat32Array(1, 1, 1, 1),
+"update": 0,
+"values": [-0.0023752, 1.57047, 2.51189, 2.51188]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("../Skeleton2D/Upper/Upper_Body/Left_Shouder:rotation")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 0.2, 0.4, 0.6),
+"transitions": PackedFloat32Array(1, 1, 1, 1),
+"update": 0,
+"values": [-0.102013, -0.952462, -1.6293, -1.6293]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("../Skeleton2D/Upper/Upper_Body/Right_Shouder/Hand:rotation")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [-0.0023752]
+}
+tracks/3/type = "value"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("../Skeleton2D/Upper/Upper_Body/Right_Shouder:rotation")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [-0.148278]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_2e3rt"]
+_data = {
+"RESET": SubResource("Animation_eogf5"),
+"fire": SubResource("Animation_2anh6")
+}
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_rqbti"]
+size = Vector2(22.9632, 67.0664)
+
+[node name="Player" type="CharacterBody2D" node_paths=PackedStringArray("animator")]
+script = ExtResource("1_puklx")
+player = ExtResource("2_dcxem")
+animator = NodePath("AnimationPlayer")
+
+[node name="Player_Spite" type="Node2D" parent="."]
+
+[node name="Skeleton2D" type="Skeleton2D" parent="Player_Spite"]
+modulate = Color(1, 1, 1, 0.117647)
+modification_stack = SubResource("SkeletonModificationStack2D_8iwjg")
+
+[node name="Upper" type="Bone2D" parent="Player_Spite/Skeleton2D"]
+rest = Transform2D(0.999827, -0.0111092, 0.0111092, 0.999827, 0, 0)
+metadata/_local_pose_override_enabled_ = true
+
+[node name="Upper_Body" type="Bone2D" parent="Player_Spite/Skeleton2D/Upper"]
+rest = Transform2D(1, 0, 0, 1, 0, 0)
+
+[node name="RemoteTransform2D" type="RemoteTransform2D" parent="Player_Spite/Skeleton2D/Upper/Upper_Body"]
+remote_path = NodePath("../../../../Player/Upper")
+
+[node name="Right_Shouder" type="Bone2D" parent="Player_Spite/Skeleton2D/Upper/Upper_Body"]
+position = Vector2(9.23379, -20.901)
+rotation = -0.148278
+scale = Vector2(0.999997, 0.999997)
+rest = Transform2D(1, -9.31323e-10, 9.31323e-10, 1, 9.23379, -20.901)
+metadata/_local_pose_override_enabled_ = true
+
+[node name="Hand" type="Bone2D" parent="Player_Spite/Skeleton2D/Upper/Upper_Body/Right_Shouder"]
+position = Vector2(20.9899, 1.23339)
+rotation = -0.0023752
+rest = Transform2D(1, 0, 0, 1, 20.9899, 1.23339)
+metadata/_local_pose_override_enabled_ = true
+
+[node name="Hand2" type="Bone2D" parent="Player_Spite/Skeleton2D/Upper/Upper_Body/Right_Shouder/Hand"]
+position = Vector2(19.9899, 1.22228)
+rest = Transform2D(1, 0, 0, 1, 19.9899, 1.22228)
+
+[node name="RemoteTransform2D" type="RemoteTransform2D" parent="Player_Spite/Skeleton2D/Upper/Upper_Body/Right_Shouder/Hand/Hand2"]
+remote_path = NodePath("../../../../../../../Player/Upper/Right_Hand")
+
+[node name="Left_Shouder" type="Bone2D" parent="Player_Spite/Skeleton2D/Upper/Upper_Body"]
+position = Vector2(-16.7564, -22.19)
+rotation = -0.102013
+scale = Vector2(0.999988, 0.999988)
+rest = Transform2D(1, -9.31323e-10, 9.31323e-10, 1, -16.7564, -22.19)
+metadata/_local_pose_override_enabled_ = true
+
+[node name="Hand" type="Bone2D" parent="Player_Spite/Skeleton2D/Upper/Upper_Body/Left_Shouder"]
+position = Vector2(20.9899, 1.23339)
+rotation = -0.0023752
+scale = Vector2(0.999991, 0.999991)
+rest = Transform2D(1, 0, 0, 1, 20.9899, 1.23339)
+metadata/_local_pose_override_enabled_ = true
+
+[node name="Hand2" type="Bone2D" parent="Player_Spite/Skeleton2D/Upper/Upper_Body/Left_Shouder/Hand"]
+position = Vector2(19.9899, 1.22228)
+rest = Transform2D(1, 0, 0, 1, 19.9899, 1.22228)
+
+[node name="RemoteTransform2D" type="RemoteTransform2D" parent="Player_Spite/Skeleton2D/Upper/Upper_Body/Left_Shouder/Hand/Hand2"]
+remote_path = NodePath("../../../../../../../Player/Upper/Left_Hand")
+
+[node name="Lower" type="Bone2D" parent="Player_Spite/Skeleton2D"]
+position = Vector2(-1, 8)
+rest = Transform2D(1, 0, 0, 1, -1, 8)
+
+[node name="Player" type="Node2D" parent="Player_Spite"]
+metadata/_edit_lock_ = true
+
+[node name="Upper" type="Node2D" parent="Player_Spite/Player"]
+metadata/_edit_lock_ = true
+
+[node name="Body" type="Node2D" parent="Player_Spite/Player/Upper"]
+metadata/_edit_lock_ = true
+
+[node name="Polygon2D" type="Polygon2D" parent="Player_Spite/Player/Upper/Body"]
+position = Vector2(-71.5691, -22.725)
+scale = Vector2(0.340659, 0.244094)
+polygon = PackedVector2Array(158, -35, 158, 29.6545, 158, 92, 203.5, 92, 249, 92, 249, -35)
+metadata/_edit_lock_ = true
+
+[node name="Head" type="Node2D" parent="Player_Spite/Player/Upper"]
+metadata/_edit_lock_ = true
+
+[node name="Polygon2D2" type="Polygon2D" parent="Player_Spite/Player/Upper/Head"]
+position = Vector2(-55.745, -46.2683)
+scale = Vector2(0.275926, 0.135192)
+polygon = PackedVector2Array(158, -35, 158, 92, 249, 92, 249, -35)
+metadata/_edit_lock_ = true
+
+[node name="Left_Hand" type="Node2D" parent="Player_Spite/Player/Upper"]
+position = Vector2(-5, -27)
+rotation = 0.882585
+scale = Vector2(0.999978, 0.999978)
+metadata/_edit_lock_ = true
+
+[node name="Polygon2D5" type="Polygon2D" parent="Player_Spite/Player/Upper/Left_Hand"]
+position = Vector2(-46.9969, 11.8309)
+rotation = -3.08893
+scale = Vector2(0.0996499, 0.0564508)
+color = Color(0, 0, 0, 1)
+offset = Vector2(-760, 220)
+polygon = PackedVector2Array(158, -35, 158, 92, 249, 92, 249, -35)
+metadata/_edit_lock_ = true
+
+[node name="Right_Hand" type="Node2D" parent="Player_Spite/Player/Upper"]
+position = Vector2(50.1224, -24.5738)
+rotation = -0.150653
+scale = Vector2(0.999997, 0.999997)
+metadata/_edit_lock_ = true
+
+[node name="Polygon2D4" type="Polygon2D" parent="Player_Spite/Player/Upper/Right_Hand"]
+position = Vector2(-61.745, -17.2683)
+scale = Vector2(0.0996518, 0.0564519)
+offset = Vector2(490, 270)
+polygon = PackedVector2Array(158, -35, 158, 92, 249, 92, 249, -35)
+metadata/_edit_lock_ = true
+
+[node name="Lower" type="Node2D" parent="Player_Spite/Player"]
+metadata/_edit_lock_ = true
+
+[node name="Lower" type="Node2D" parent="Player_Spite/Player/Lower"]
+metadata/_edit_lock_ = true
+
+[node name="Polygon2D2" type="Polygon2D" parent="Player_Spite/Player/Lower/Lower"]
+position = Vector2(-72.1257, 5.73172)
+scale = Vector2(0.344182, 0.0578237)
+polygon = PackedVector2Array(158, -35, 158, 29.6545, 158, 92, 200.446, 92, 249, 92, 249, -35)
+metadata/_edit_lock_ = true
+
+[node name="Right_Leg" type="Node2D" parent="Player_Spite/Player/Lower"]
+metadata/_edit_lock_ = true
+
+[node name="Polygon2D7" type="Polygon2D" parent="Player_Spite/Player/Lower/Right_Leg"]
+position = Vector2(-25.745, 17.7317)
+scale = Vector2(0.167638, 0.0564519)
+polygon = PackedVector2Array(158, -35, 158, 26.3628, 158, 92, 249, 92, 249, -35)
+
+[node name="Left_Leg" type="Node2D" parent="Player_Spite/Player/Lower"]
+metadata/_edit_lock_ = true
+
+[node name="Polygon2D6" type="Polygon2D" parent="Player_Spite/Player/Lower/Left_Leg"]
+position = Vector2(-45.745, 17.7317)
+scale = Vector2(0.167638, 0.0564519)
+polygon = PackedVector2Array(158, -35, 158, 26.3628, 158, 92, 249, 92, 249, -35)
+
+[node name="Hat" type="Node2D" parent="Player_Spite/Player"]
+metadata/_edit_lock_ = true
+
+[node name="Weapon" type="Node2D" parent="Player_Spite/Player"]
+metadata/_edit_lock_ = true
+
+[node name="Cape" type="Node2D" parent="Player_Spite/Player"]
+metadata/_edit_lock_ = true
+
+[node name="Flip_TK" type="Node2D" parent="Player_Spite"]
+position = Vector2(197, -3)
+
+[node name="Upper" type="Node2D" parent="Player_Spite"]
+
+[node name="Upper_Body_TK" type="Node2D" parent="Player_Spite/Upper"]
+position = Vector2(102, 0)
+rotation = -1.28282
+
+[node name="Right_Hand_TK" type="Node2D" parent="Player_Spite/Upper"]
+position = Vector2(66, -26)
+
+[node name="Left_Hand_TK" type="Node2D" parent="Player_Spite/Upper"]
+position = Vector2(-5, -27)
+
+[node name="Lower_Body_TK" type="Node2D" parent="Player_Spite"]
+metadata/_edit_lock_ = true
+
+[node name="Left_Leg_TK" type="Node2D" parent="Player_Spite"]
+metadata/_edit_lock_ = true
+
+[node name="Right_Leg_TK" type="Node2D" parent="Player_Spite"]
+metadata/_edit_lock_ = true
+
+[node name="FiniteStateMachine_Lower" type="Node" parent="Player_Spite" node_paths=PackedStringArray("current_state")]
+script = ExtResource("3_1d5im")
+current_state = NodePath("PLayerIdle")
+
+[node name="PLayerHurt" type="Node" parent="Player_Spite/FiniteStateMachine_Lower" node_paths=PackedStringArray("actor", "animator")]
+script = ExtResource("4_okw53")
+actor = NodePath("../../..")
+player = ExtResource("2_dcxem")
+animator = NodePath("../../../AnimationPlayer")
+
+[node name="PLayerRun" type="Node" parent="Player_Spite/FiniteStateMachine_Lower" node_paths=PackedStringArray("actor", "animator")]
+script = ExtResource("8_wmsuh")
+actor = NodePath("../../..")
+player = ExtResource("2_dcxem")
+animator = NodePath("../../../AnimationPlayer")
+
+[node name="PLayerIdle" type="Node" parent="Player_Spite/FiniteStateMachine_Lower" node_paths=PackedStringArray("actor", "animator")]
+script = ExtResource("4_oax2p")
+actor = NodePath("../../..")
+player_data = ExtResource("2_dcxem")
+animator = NodePath("../../../AnimationPlayer")
+
+[node name="PLayerWalk" type="Node" parent="Player_Spite/FiniteStateMachine_Lower" node_paths=PackedStringArray("actor", "animator")]
+script = ExtResource("9_xh0qx")
+actor = NodePath("../../..")
+player_data = ExtResource("2_dcxem")
+animator = NodePath("../../../AnimationPlayer")
+
+[node name="PLayerDash" type="Node" parent="Player_Spite/FiniteStateMachine_Lower"]
+script = ExtResource("8_0ichm")
+
+[node name="CanvasLayer" type="CanvasLayer" parent="."]
+
+[node name="VSlider2" parent="CanvasLayer" instance=ExtResource("9_foevr")]
+offset_left = 403.0
+offset_top = 397.0
+offset_right = 531.0
+offset_bottom = 771.0
+rotation = 3.51629
+min_value = -12.0
+max_value = 12.0
+value = 0.0
+metadata/_edit_use_anchors_ = true
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+root_node = NodePath("../Player_Spite/FiniteStateMachine_Lower")
+libraries = {
+"": SubResource("AnimationLibrary_2e3rt")
+}
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(-0.999999, -16)
+scale = Vector2(1.54284, 1.17407)
+shape = SubResource("RectangleShape2D_rqbti")
+metadata/_edit_lock_ = true
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="."]
+visible = false
+position = Vector2(-193, -75)
+scale = Vector2(1.54284, 1.17407)
+polygon = PackedVector2Array(111.483, 44.2904, 124.446, 83.4703, 134.817, 45.9938, 123.798, 18.7382)
+
+[connection signal="value_changed" from="CanvasLayer/VSlider2" to="." method="_on_v_slider_value_changed"]
