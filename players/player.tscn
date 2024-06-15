@@ -1,8 +1,10 @@
-[gd_scene load_steps=19 format=3 uid="uid://bv75iulx2oydl"]
+[gd_scene load_steps=21 format=3 uid="uid://bv75iulx2oydl"]
 
 [ext_resource type="Script" path="res://players/player_controller.gd" id="1_puklx"]
 [ext_resource type="Resource" uid="uid://jb38qwtn04kx" path="res://players/player.tres" id="2_dcxem"]
 [ext_resource type="Script" path="res://states/finite_state_machine.gd" id="3_1d5im"]
+[ext_resource type="Script" path="res://players/weapon_controller.gd" id="3_24enf"]
+[ext_resource type="PackedScene" uid="uid://b6yx0rcvth7lg" path="res://items/weapons/bow.tscn" id="3_v3v5h"]
 [ext_resource type="Script" path="res://states/player_idle.gd" id="4_oax2p"]
 [ext_resource type="Script" path="res://states/player_hurt.gd" id="4_okw53"]
 [ext_resource type="Script" path="res://states/player_dash.gd" id="8_0ichm"]
@@ -271,6 +273,15 @@ offset = Vector2(490, 270)
 polygon = PackedVector2Array(158, -35, 158, 92, 249, 92, 249, -35)
 metadata/_edit_lock_ = true
 
+[node name="Weapon" type="Node2D" parent="Player_Spite/Player/Upper"]
+script = ExtResource("3_24enf")
+metadata/_edit_lock_ = true
+
+[node name="Bow_Test" parent="Player_Spite/Player/Upper/Weapon" instance=ExtResource("3_v3v5h")]
+position = Vector2(48, -29)
+rotation = -0.127409
+scale = Vector2(0.5, 0.5)
+
 [node name="Lower" type="Node2D" parent="Player_Spite/Player"]
 metadata/_edit_lock_ = true
 
@@ -300,9 +311,6 @@ scale = Vector2(0.167638, 0.0564519)
 polygon = PackedVector2Array(158, -35, 158, 26.3628, 158, 92, 249, 92, 249, -35)
 
 [node name="Hat" type="Node2D" parent="Player_Spite/Player"]
-metadata/_edit_lock_ = true
-
-[node name="Weapon" type="Node2D" parent="Player_Spite/Player"]
 metadata/_edit_lock_ = true
 
 [node name="Cape" type="Node2D" parent="Player_Spite/Player"]
@@ -394,4 +402,5 @@ position = Vector2(-193, -75)
 scale = Vector2(1.54284, 1.17407)
 polygon = PackedVector2Array(111.483, 44.2904, 124.446, 83.4703, 134.817, 45.9938, 123.798, 18.7382)
 
+[connection signal="gui_input" from="CanvasLayer/VSlider2" to="." method="_on_shot"]
 [connection signal="value_changed" from="CanvasLayer/VSlider2" to="." method="_on_v_slider_value_changed"]

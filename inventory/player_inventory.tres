@@ -1,0 +1,40 @@
+[gd_resource type="Resource" script_class="INVENTORY" load_steps=6 format=3 uid="uid://bkhvfh7uxwryb"]
+
+[ext_resource type="Texture2D" uid="uid://wgn3qrkrtwou" path="res://icon.svg" id="1_wogva"]
+[ext_resource type="Script" path="res://items/item.gd" id="2_aj80w"]
+[ext_resource type="Script" path="res://inventory/inventory.gd" id="2_fg4uh"]
+
+[sub_resource type="Resource" id="Resource_6h7j4"]
+script = ExtResource("2_aj80w")
+NAME = "haha"
+TEXTURE = ExtResource("1_wogva")
+QUANTITY = 12
+SPEED = 0
+DAM = 0
+HEALTH = 0
+TYPE = 0
+STACKABLE = false
+COMSUMABLE = false
+IS_EQUIPED = false
+DESCRIPTION = ""
+STAR = 0
+MAX_STACK = 60
+
+[sub_resource type="Resource" id="Resource_vaj8j"]
+script = ExtResource("2_aj80w")
+NAME = "sdasdas"
+QUANTITY = 11
+SPEED = 0
+DAM = 0
+HEALTH = 0
+TYPE = 0
+STACKABLE = false
+COMSUMABLE = false
+IS_EQUIPED = false
+DESCRIPTION = ""
+STAR = 0
+MAX_STACK = 60
+
+[resource]
+script = ExtResource("2_fg4uh")
+items = Array[ExtResource("2_aj80w")]([SubResource("Resource_6h7j4"), SubResource("Resource_vaj8j")])

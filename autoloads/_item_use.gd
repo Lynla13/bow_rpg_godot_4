@@ -11,6 +11,7 @@ signal _add_skill_to_slot (item)
 signal _description_item (item)
 signal _remove_equip (item)
 signal _remove_item (item)
+signal _fire ()
 
 #reload signal is connect with update inventory
 #Connect to Player
@@ -43,3 +44,6 @@ func __equip_item (_item) :
 func __remove_equip (_item): 
 	emit_signal("_remove_equip", _item)
 	emit_signal("_reload")
+
+func _fire_arrow () :
+	emit_signal("fire")

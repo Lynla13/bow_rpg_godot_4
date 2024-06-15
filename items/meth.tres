@@ -1,0 +1,20 @@
+[gd_resource type="Resource" script_class="ITEM" load_steps=3 format=3 uid="uid://b2mebiq4bkws2"]
+
+[ext_resource type="Texture2D" uid="uid://wgn3qrkrtwou" path="res://icon.svg" id="1_anqty"]
+[ext_resource type="Script" path="res://items/item.gd" id="1_mc4v2"]
+
+[resource]
+script = ExtResource("1_mc4v2")
+NAME = "meth"
+TEXTURE = ExtResource("1_anqty")
+QUANTITY = 4
+SPEED = 0
+DAM = 0
+HEALTH = 0
+TYPE = 0
+STACKABLE = false
+COMSUMABLE = false
+IS_EQUIPED = false
+DESCRIPTION = ""
+STAR = 0
+MAX_STACK = 60

@@ -1,9 +1,11 @@
-extends Node
+extends RigidBody2D
 
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
-	pass # Replace with function body.
+	var impulse_strength = 3000
+	var angle = self.rotation
+	self.apply_central_impulse(Vector2(cos(angle), sin(angle)) *  impulse_strength)
 
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.

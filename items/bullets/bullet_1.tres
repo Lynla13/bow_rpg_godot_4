@@ -1,10 +1,14 @@
-[gd_resource type="Resource" script_class="BULLET" load_steps=2 format=3 uid="uid://ck5qkuwjwyerx"]
+[gd_resource type="Resource" script_class="BULLET" load_steps=3 format=3 uid="uid://ck5qkuwjwyerx"]
 
 [ext_resource type="Script" path="res://items/bullets/bullet.gd" id="1_drn7n"]
+[ext_resource type="PackedScene" uid="uid://lrhyokxvu6ow" path="res://items/bullets/bullet.tscn" id="1_wf784"]
 
 [resource]
 script = ExtResource("1_drn7n")
-NAME = ""
-LEVEL = 0
+NAME = "bullet"
 TYPE = 0
+ELEMENT = 0
 QUANTITY = 0
+LEVEL = 0
+ALIVE_TIME = 100
+BULLET = ExtResource("1_wf784")

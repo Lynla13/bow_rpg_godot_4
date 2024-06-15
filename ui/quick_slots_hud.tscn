@@ -1,0 +1,39 @@
+[gd_scene load_steps=2 format=3 uid="uid://byvkus2kid7f5"]
+
+[ext_resource type="PackedScene" uid="uid://culqsqaxv33q6" path="res://ui/quick_slot.tscn" id="1_xd0oo"]
+
+[node name="quick_slots_hud" type="Control"]
+custom_minimum_size = Vector2(60, 235)
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_right = -663.0
+offset_bottom = -143.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="MarginContainer" type="MarginContainer" parent="."]
+layout_mode = 0
+offset_right = 40.0
+offset_bottom = 40.0
+theme_override_constants/margin_left = 10
+theme_override_constants/margin_top = 10
+
+[node name="VBoxContainer" type="VBoxContainer" parent="MarginContainer"]
+layout_mode = 2
+
+[node name="quick_slot" parent="MarginContainer/VBoxContainer" instance=ExtResource("1_xd0oo")]
+layout_mode = 2
+
+[node name="quick_slot2" parent="MarginContainer/VBoxContainer" instance=ExtResource("1_xd0oo")]
+layout_mode = 2
+
+[node name="quick_slot3" parent="MarginContainer/VBoxContainer" instance=ExtResource("1_xd0oo")]
+layout_mode = 2
+
+[node name="quick_slot4" parent="MarginContainer/VBoxContainer" instance=ExtResource("1_xd0oo")]
+layout_mode = 2
+
+[node name="quick_slot5" parent="MarginContainer/VBoxContainer" instance=ExtResource("1_xd0oo")]
+layout_mode = 2

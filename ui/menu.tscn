@@ -1,0 +1,29 @@
+[gd_scene load_steps=3 format=3 uid="uid://28ntltbbj4x0"]
+
+[ext_resource type="PackedScene" uid="uid://bex2gcotd3bdr" path="res://ui/inventory.tscn" id="1_sx405"]
+[ext_resource type="PackedScene" uid="uid://6umpoqfrstp4" path="res://ui/equipment_ui.tscn" id="2_v67q0"]
+
+[node name="Menu" type="Control"]
+custom_minimum_size = Vector2(390, 400)
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_right = -328.0
+offset_bottom = 9.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="TabContainer" type="TabContainer" parent="."]
+layout_mode = 2
+offset_right = 40.0
+offset_bottom = 40.0
+tab_alignment = 1
+clip_tabs = false
+
+[node name="inventory" parent="TabContainer" instance=ExtResource("1_sx405")]
+layout_mode = 2
+
+[node name="equipment" parent="TabContainer" instance=ExtResource("2_v67q0")]
+visible = false
+layout_mode = 2

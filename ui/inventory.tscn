@@ -1,0 +1,63 @@
+[gd_scene load_steps=4 format=3 uid="uid://bex2gcotd3bdr"]
+
+[ext_resource type="PackedScene" uid="uid://bil1qwxhe0gk5" path="res://ui/slot.tscn" id="1_7ckxf"]
+[ext_resource type="Script" path="res://inventory/inventory_ui.gd" id="1_qkvvg"]
+[ext_resource type="Resource" uid="uid://bkhvfh7uxwryb" path="res://inventory/player_inventory.tres" id="2_r0n4b"]
+
+[node name="inventory" type="Control"]
+custom_minimum_size = Vector2(390, 400)
+layout_mode = 3
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+script = ExtResource("1_qkvvg")
+inventory = ExtResource("2_r0n4b")
+
+[node name="Container" type="MarginContainer" parent="."]
+layout_mode = 0
+offset_right = 40.0
+offset_bottom = 40.0
+theme_override_constants/margin_left = 10
+theme_override_constants/margin_top = 20
+theme_override_constants/margin_right = 10
+theme_override_constants/margin_bottom = 10
+
+[node name="Panel" type="ScrollContainer" parent="Container"]
+custom_minimum_size = Vector2(370, 370)
+layout_mode = 2
+
+[node name="item_container" type="VBoxContainer" parent="Container/Panel"]
+layout_mode = 2
+
+[node name="Slot2" parent="Container/Panel/item_container" instance=ExtResource("1_7ckxf")]
+layout_mode = 2
+
+[node name="Slot3" parent="Container/Panel/item_container" instance=ExtResource("1_7ckxf")]
+layout_mode = 2
+
+[node name="Slot4" parent="Container/Panel/item_container" instance=ExtResource("1_7ckxf")]
+layout_mode = 2
+
+[node name="Slot5" parent="Container/Panel/item_container" instance=ExtResource("1_7ckxf")]
+layout_mode = 2
+
+[node name="Slot6" parent="Container/Panel/item_container" instance=ExtResource("1_7ckxf")]
+layout_mode = 2
+
+[node name="Slot7" parent="Container/Panel/item_container" instance=ExtResource("1_7ckxf")]
+layout_mode = 2
+
+[node name="Slot8" parent="Container/Panel/item_container" instance=ExtResource("1_7ckxf")]
+layout_mode = 2
+
+[node name="Slot9" parent="Container/Panel/item_container" instance=ExtResource("1_7ckxf")]
+layout_mode = 2
+
+[node name="Slot10" parent="Container/Panel/item_container" instance=ExtResource("1_7ckxf")]
+layout_mode = 2
+
+[node name="Slot11" parent="Container/Panel/item_container" instance=ExtResource("1_7ckxf")]
+layout_mode = 2
+
+[node name="Slot12" parent="Container/Panel/item_container" instance=ExtResource("1_7ckxf")]
+layout_mode = 2

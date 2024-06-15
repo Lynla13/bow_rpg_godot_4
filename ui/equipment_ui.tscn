@@ -1,0 +1,83 @@
+[gd_scene load_steps=2 format=3 uid="uid://6umpoqfrstp4"]
+
+[ext_resource type="PackedScene" uid="uid://culqsqaxv33q6" path="res://ui/quick_slot.tscn" id="1_736yb"]
+
+[node name="equipment" type="Control"]
+custom_minimum_size = Vector2(390, 400)
+layout_mode = 3
+anchor_right = 0.514
+anchor_bottom = 0.843
+offset_right = -0.0799866
+offset_bottom = -0.0600281
+grow_vertical = 2
+size_flags_vertical = 8
+
+[node name="HSplitContainer" type="HSplitContainer" parent="."]
+custom_minimum_size = Vector2(350, 350)
+layout_mode = 0
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="MarginContainer2" type="MarginContainer" parent="HSplitContainer"]
+custom_minimum_size = Vector2(100, 350)
+layout_mode = 2
+theme_override_constants/margin_left = 10
+theme_override_constants/margin_top = 10
+theme_override_constants/margin_right = 10
+theme_override_constants/margin_bottom = 10
+
+[node name="VBoxContainer" type="VBoxContainer" parent="HSplitContainer/MarginContainer2"]
+custom_minimum_size = Vector2(100, 350)
+layout_mode = 2
+
+[node name="MarginContainer" type="MarginContainer" parent="HSplitContainer/MarginContainer2/VBoxContainer"]
+layout_mode = 2
+theme_override_constants/margin_top = 10
+theme_override_constants/margin_bottom = 10
+
+[node name="quick_slot" parent="HSplitContainer/MarginContainer2/VBoxContainer/MarginContainer" instance=ExtResource("1_736yb")]
+layout_mode = 2
+
+[node name="MarginContainer2" type="MarginContainer" parent="HSplitContainer/MarginContainer2/VBoxContainer"]
+layout_mode = 2
+theme_override_constants/margin_top = 10
+theme_override_constants/margin_bottom = 10
+
+[node name="quick_slot" parent="HSplitContainer/MarginContainer2/VBoxContainer/MarginContainer2" instance=ExtResource("1_736yb")]
+layout_mode = 2
+
+[node name="MarginContainer3" type="MarginContainer" parent="HSplitContainer/MarginContainer2/VBoxContainer"]
+layout_mode = 2
+theme_override_constants/margin_top = 10
+theme_override_constants/margin_bottom = 10
+
+[node name="quick_slot" parent="HSplitContainer/MarginContainer2/VBoxContainer/MarginContainer3" instance=ExtResource("1_736yb")]
+layout_mode = 2
+
+[node name="MarginContainer4" type="MarginContainer" parent="HSplitContainer/MarginContainer2/VBoxContainer"]
+layout_mode = 2
+theme_override_constants/margin_top = 10
+theme_override_constants/margin_bottom = 10
+
+[node name="quick_slot" parent="HSplitContainer/MarginContainer2/VBoxContainer/MarginContainer4" instance=ExtResource("1_736yb")]
+layout_mode = 2
+
+[node name="MarginContainer5" type="MarginContainer" parent="HSplitContainer/MarginContainer2/VBoxContainer"]
+layout_mode = 2
+theme_override_constants/margin_top = 10
+theme_override_constants/margin_bottom = 10
+
+[node name="quick_slot" parent="HSplitContainer/MarginContainer2/VBoxContainer/MarginContainer5" instance=ExtResource("1_736yb")]
+layout_mode = 2
+
+[node name="MarginContainer" type="MarginContainer" parent="HSplitContainer"]
+custom_minimum_size = Vector2(100, 320)
+layout_mode = 2
+theme_override_constants/margin_left = 10
+theme_override_constants/margin_top = 20
+theme_override_constants/margin_right = 10
+theme_override_constants/margin_bottom = 10
+
+[node name="Panel" type="Panel" parent="HSplitContainer/MarginContainer"]
+custom_minimum_size = Vector2(0, 300)
+layout_mode = 2
