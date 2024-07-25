@@ -1,0 +1,13 @@
+[gd_resource type="Resource" script_class="ENEMY" load_steps=2 format=3 uid="uid://byubmab743fv1"]
+
+[ext_resource type="Script" path="res://enemies/enemy.gd" id="1_br4tt"]
+
+[resource]
+script = ExtResource("1_br4tt")
+NAME = "Pupet"
+HP = 1000
+SPEED = 5000
+DAM = 0
+LEVEL = 0
+ROLE = 0
+STATUS = 0

@@ -2,14 +2,17 @@ extends Resource
 class_name ITEM
 
 enum _type 
-{item,bullet,weapon, hat}
+{item,top,bottom,hat,cape,weapon}
 @export var NAME : String
 @export var TEXTURE : Texture
 @export_range(1, 100) var QUANTITY : int
-@export_category("Main Category")
+@export_category("Weapon Category")
 @export var SPEED : int
-@export var DAM : int
+@export var KNOCKBACK : int
 @export var HEALTH : int
+@export var MIN_DAME : int
+@export var MAX_DAME : int
+@export var CRTDAM : int
 @export var TYPE : _type
 @export_category("Extra Category")
 @export var STACKABLE : bool = false
@@ -19,9 +22,7 @@ enum _type
 @export_range(1, 5) var STAR : int
 @export var MAX_STACK : int = 60
 @export_category("")
-@export var BULLET : BULLET
-@export var ITEM : ITEM
-@export var _EFFECT : EFFECT	
+@export var ITEM : PackedScene
 
 
 func _is_use () :
@@ -30,7 +31,7 @@ func _is_use () :
 			QUANTITY -= 1 
 			ItemUse.__use_item(self)
 		elif TYPE >= 1:
-			IS_EQUIPED != IS_EQUIPED
+			IS_EQUIPED = !IS_EQUIPED
 			# AUTOLOAD
 			if IS_EQUIPED : 	 ItemUse.__equip_item(self)
-			elif !IS_EQUIPED: 	 ItemUse.__remove_equip(self)
+			elif IS_EQUIPED == false: 	 ItemUse.__remove_equip(self)

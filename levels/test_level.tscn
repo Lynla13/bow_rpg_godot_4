@@ -1,0 +1,53 @@
+[gd_scene load_steps=4 format=3 uid="uid://dyr8ka6bajaj8"]
+
+[ext_resource type="Texture2D" uid="uid://wgn3qrkrtwou" path="res://icon.svg" id="1_6e68v"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_7xxdr"]
+size = Vector2(25.0583, 394.449)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_mkhwi"]
+size = Vector2(782.216, 26.0869)
+
+[node name="test_level" type="Node2D"]
+
+[node name="StaticBody2D" type="StaticBody2D" parent="."]
+collision_layer = 8
+collision_mask = 15
+
+[node name="Sprite2D" type="Sprite2D" parent="StaticBody2D"]
+position = Vector2(3053, -38)
+texture = ExtResource("1_6e68v")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D"]
+position = Vector2(5666.08, 610.912)
+scale = Vector2(4.715, 4.715)
+shape = SubResource("RectangleShape2D_7xxdr")
+
+[node name="StaticBody2D3" type="StaticBody2D" parent="."]
+collision_layer = 8
+collision_mask = 15
+
+[node name="Sprite2D" type="Sprite2D" parent="StaticBody2D3"]
+position = Vector2(3125, 1138)
+texture = ExtResource("1_6e68v")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D3"]
+position = Vector2(2610, 611)
+scale = Vector2(4.715, 4.715)
+shape = SubResource("RectangleShape2D_7xxdr")
+
+[node name="StaticBody2D2" type="StaticBody2D" parent="."]
+collision_layer = 8
+collision_mask = 15
+
+[node name="PlayGround" type="Polygon2D" parent="StaticBody2D2"]
+position = Vector2(100.346, -8.46793)
+scale = Vector2(0.962234, 1.00553)
+invert_enabled = true
+polygon = PackedVector2Array(2657, -277, 2659.08, 1519.07, 5757.08, 1519.07, 5744, -268)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D2"]
+position = Vector2(4273, 1578.5)
+scale = Vector2(4.715, 4.715)
+shape = SubResource("RectangleShape2D_mkhwi")
+debug_color = Color(0.744774, 0.460028, 0.149556, 0.42)

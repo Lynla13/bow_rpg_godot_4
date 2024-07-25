@@ -1,0 +1,29 @@
+[gd_scene load_steps=3 format=3 uid="uid://c4co8ijcdx2d5"]
+
+[ext_resource type="Script" path="res://ui/status_bar.gd" id="1_cpkky"]
+[ext_resource type="Resource" uid="uid://jb38qwtn04kx" path="res://players/player.tres" id="2_toyiy"]
+
+[node name="Status_bar" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_cpkky")
+player_data = ExtResource("2_toyiy")
+
+[node name="Health" type="HSlider" parent="."]
+layout_mode = 0
+offset_right = 328.0
+offset_bottom = 16.0
+editable = false
+scrollable = false
+
+[node name="Mana" type="HSlider" parent="."]
+layout_mode = 0
+offset_top = 20.0
+offset_right = 328.0
+offset_bottom = 36.0
+editable = false
+scrollable = false

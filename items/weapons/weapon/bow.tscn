@@ -1,0 +1,35 @@
+[gd_scene load_steps=3 format=3 uid="uid://b6yx0rcvth7lg"]
+
+[ext_resource type="Script" path="res://items/weapons/script/bow.gd" id="1_d028h"]
+[ext_resource type="Resource" uid="uid://cpavne3bfhb4w" path="res://items/weapons/resources/bow_test.tres" id="2_l0t7d"]
+
+[node name="Bow_Test" type="Node2D"]
+z_index = -1
+position = Vector2(-106, -132)
+rotation = -0.0174192
+scale = Vector2(2, 2)
+script = ExtResource("1_d028h")
+weapon = ExtResource("2_l0t7d")
+
+[node name="Timer2" type="Timer" parent="."]
+wait_time = 0.3
+one_shot = true
+autostart = true
+
+[node name="Timer" type="Timer" parent="."]
+wait_time = 0.6
+
+[node name="Polygon2D" type="Polygon2D" parent="."]
+position = Vector2(66.195, 92.3)
+rotation = 3.1248
+scale = Vector2(0.086, 0.197)
+color = Color(0.140447, 0.140447, 0.140447, 1)
+invert_border = 1.0
+polygon = PackedVector2Array(157.659, 39, 202.61, 32, 154.087, 134.651, 202.61, 223, 231, 227, 155.293, 217, 134.723, 205.346, 136.159, 147.212, 55.3609, 131.389, 135.477, 121.496, 136.139, 48)
+metadata/_edit_lock_ = true
+
+[node name="projectie" type="Node2D" parent="."]
+position = Vector2(50, 67)
+
+[connection signal="timeout" from="Timer2" to="." method="_on_start_timeout"]
+[connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]

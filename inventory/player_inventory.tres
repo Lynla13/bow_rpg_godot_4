@@ -1,39 +1,49 @@
-[gd_resource type="Resource" script_class="INVENTORY" load_steps=6 format=3 uid="uid://bkhvfh7uxwryb"]
+[gd_resource type="Resource" script_class="INVENTORY" load_steps=7 format=3 uid="uid://bkhvfh7uxwryb"]
 
+[ext_resource type="PackedScene" uid="uid://b6yx0rcvth7lg" path="res://items/weapons/weapon/bow.tscn" id="1_bwnsn"]
 [ext_resource type="Texture2D" uid="uid://wgn3qrkrtwou" path="res://icon.svg" id="1_wogva"]
 [ext_resource type="Script" path="res://items/item.gd" id="2_aj80w"]
 [ext_resource type="Script" path="res://inventory/inventory.gd" id="2_fg4uh"]
 
 [sub_resource type="Resource" id="Resource_6h7j4"]
 script = ExtResource("2_aj80w")
-NAME = "haha"
+NAME = "equipable"
 TEXTURE = ExtResource("1_wogva")
-QUANTITY = 12
+QUANTITY = 1
 SPEED = 0
-DAM = 0
+KNOCKBACK = 0
 HEALTH = 0
-TYPE = 0
+MIN_DAME = 0
+MAX_DAME = 0
+CRTDAM = 0
+TYPE = 5
 STACKABLE = false
 COMSUMABLE = false
 IS_EQUIPED = false
 DESCRIPTION = ""
 STAR = 0
 MAX_STACK = 60
+ITEM = ExtResource("1_bwnsn")
 
 [sub_resource type="Resource" id="Resource_vaj8j"]
 script = ExtResource("2_aj80w")
 NAME = "sdasdas"
-QUANTITY = 11
+TEXTURE = ExtResource("1_wogva")
+QUANTITY = 1
 SPEED = 0
-DAM = 0
+KNOCKBACK = 0
 HEALTH = 0
-TYPE = 0
+MIN_DAME = 0
+MAX_DAME = 0
+CRTDAM = 0
+TYPE = 2
 STACKABLE = false
 COMSUMABLE = false
 IS_EQUIPED = false
 DESCRIPTION = ""
 STAR = 0
 MAX_STACK = 60
+ITEM = ExtResource("1_bwnsn")
 
 [resource]
 script = ExtResource("2_fg4uh")

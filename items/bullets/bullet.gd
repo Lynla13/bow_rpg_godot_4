@@ -16,7 +16,7 @@ enum _element
 var max_level : int = 100
 var max_quantity : int = 100
 
-
+#note: this is not in use, but may be i will need later
 func _set_level (value : int):
 	LEVEL = value
 	if LEVEL > max_level :

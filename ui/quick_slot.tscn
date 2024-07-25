@@ -1,4 +1,6 @@
-[gd_scene format=3 uid="uid://culqsqaxv33q6"]
+[gd_scene load_steps=2 format=3 uid="uid://culqsqaxv33q6"]
+
+[ext_resource type="Script" path="res://ui/quick_slot_ui.gd" id="1_il4k4"]
 
 [node name="quick_slot" type="Control"]
 custom_minimum_size = Vector2(50, 50)
@@ -10,23 +12,20 @@ offset_right = -667.0
 offset_bottom = -368.0
 grow_horizontal = 2
 grow_vertical = 2
-
-[node name="TextureRect" type="TextureRect" parent="."]
-custom_minimum_size = Vector2(50, 50)
-layout_mode = 0
-offset_right = 40.0
-offset_bottom = 40.0
-
-[node name="TouchScreenButton" type="TouchScreenButton" parent="."]
-
-[node name="item_quantity" type="Label" parent="."]
-layout_mode = 0
-offset_right = 40.0
-offset_bottom = 23.0
-text = "x99"
+script = ExtResource("1_il4k4")
 
 [node name="Panel" type="Panel" parent="."]
 custom_minimum_size = Vector2(50, 50)
 layout_mode = 0
 offset_right = 40.0
 offset_bottom = 40.0
+
+[node name="MarginContainer" type="MarginContainer" parent="."]
+layout_mode = 0
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="Texture" type="TextureRect" parent="MarginContainer"]
+custom_minimum_size = Vector2(50, 50)
+layout_mode = 2
+expand_mode = 1

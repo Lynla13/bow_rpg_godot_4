@@ -1,11 +1,7 @@
-[gd_scene load_steps=4 format=3 uid="uid://bil1qwxhe0gk5"]
+[gd_scene load_steps=3 format=3 uid="uid://bil1qwxhe0gk5"]
 
 [ext_resource type="Script" path="res://inventory/slot_ui.gd" id="1_b40hw"]
 [ext_resource type="Texture2D" uid="uid://wgn3qrkrtwou" path="res://icon.svg" id="1_lm4jo"]
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_6kow4"]
-atlas = ExtResource("1_lm4jo")
-region = Rect2(32.5, 20.5, 73, 65)
 
 [node name="Slot" type="Control"]
 custom_minimum_size = Vector2(200, 50)
@@ -56,10 +52,9 @@ offset_bottom = 40.0
 theme_override_constants/margin_left = 200
 
 [node name="Equip" type="TouchScreenButton" parent="MarginContainer3"]
-position = Vector2(214, 6)
-scale = Vector2(0.213, 0.208)
+position = Vector2(-0.999998, -6)
+scale = Vector2(0.363, 0.354)
 texture_normal = ExtResource("1_lm4jo")
-texture_pressed = SubResource("AtlasTexture_6kow4")
 
 [node name="Quick" type="TouchScreenButton" parent="MarginContainer3"]
 position = Vector2(261, 6)

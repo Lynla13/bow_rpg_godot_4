@@ -1,0 +1,65 @@
+[gd_scene load_steps=11 format=3 uid="uid://dk83gyva5s0yc"]
+
+[ext_resource type="Script" path="res://enemies/pupet/pupet.gd" id="1_62wjc"]
+[ext_resource type="Texture2D" uid="uid://lt2fk5s7df6w" path="res://materials/character/character_base0001.png" id="1_vsfwl"]
+[ext_resource type="Resource" uid="uid://byubmab743fv1" path="res://enemies/pupet/pupet.tres" id="2_k4yr0"]
+[ext_resource type="Script" path="res://states/finite_state_machine.gd" id="3_cu1a5"]
+[ext_resource type="Script" path="res://enemies/state/enemy_see_player.gd" id="6_yt1l1"]
+[ext_resource type="Script" path="res://enemies/state/enemy_death.gd" id="7_uqiv3"]
+[ext_resource type="Script" path="res://enemies/pupet/state/pupet_attack.gd" id="7_uvhoq"]
+[ext_resource type="Script" path="res://enemies/pupet/state/pupet_wonder.gd" id="8_l5hv0"]
+[ext_resource type="Script" path="res://enemies/state/enemy_hurt.gd" id="8_y7da2"]
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_8y1ws"]
+radius = 7.0
+height = 36.0
+
+[node name="Pupet" type="CharacterBody2D"]
+collision_layer = 4
+collision_mask = 10
+script = ExtResource("1_62wjc")
+enemy_data = ExtResource("2_k4yr0")
+
+[node name="eyes" type="RayCast2D" parent="."]
+position = Vector2(0, -13)
+target_position = Vector2(111, -2)
+collision_mask = 9
+collide_with_areas = true
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(-1, -4)
+shape = SubResource("CapsuleShape2D_8y1ws")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+position = Vector2(5, 0)
+scale = Vector2(1.96875, 1.84375)
+texture = ExtResource("1_vsfwl")
+
+[node name="FiniteStateMachine" type="Node" parent="Sprite2D" node_paths=PackedStringArray("current_state")]
+script = ExtResource("3_cu1a5")
+current_state = NodePath("PupetWonder")
+
+[node name="PupetWonder" type="Node" parent="Sprite2D/FiniteStateMachine" node_paths=PackedStringArray("actor")]
+script = ExtResource("8_l5hv0")
+actor = NodePath("../../..")
+
+[node name="EnemySeePlayer" type="Node" parent="Sprite2D/FiniteStateMachine" node_paths=PackedStringArray("actor")]
+script = ExtResource("6_yt1l1")
+actor = NodePath("../../..")
+
+[node name="EnemyDeath" type="Node" parent="Sprite2D/FiniteStateMachine"]
+script = ExtResource("7_uqiv3")
+
+[node name="EnemyHurt" type="Node" parent="Sprite2D/FiniteStateMachine"]
+script = ExtResource("8_y7da2")
+
+[node name="PupetAttack" type="Node" parent="Sprite2D/FiniteStateMachine" node_paths=PackedStringArray("actor")]
+script = ExtResource("7_uvhoq")
+actor = NodePath("../../..")
+
+[node name="state" type="Label" parent="."]
+offset_left = -29.0
+offset_top = -47.0
+offset_right = 33.0
+offset_bottom = -24.0
+text = "Wonder"

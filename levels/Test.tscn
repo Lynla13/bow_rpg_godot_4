@@ -1,46 +1,61 @@
-[gd_scene load_steps=5 format=3 uid="uid://cihh3pramsxc3"]
+[gd_scene load_steps=8 format=3 uid="uid://cihh3pramsxc3"]
 
-[ext_resource type="Texture2D" uid="uid://wgn3qrkrtwou" path="res://icon.svg" id="1_1awea"]
+[ext_resource type="PackedScene" uid="uid://ckrhensk25mia" path="res://items/projectie.tscn" id="1_icy0e"]
 [ext_resource type="PackedScene" uid="uid://bv75iulx2oydl" path="res://players/player.tscn" id="2_w4km3"]
+[ext_resource type="PackedScene" uid="uid://dyr8ka6bajaj8" path="res://levels/test_level.tscn" id="2_y1giq"]
 [ext_resource type="PackedScene" uid="uid://cb8tm0rlby324" path="res://ui/minimap.tscn" id="3_rah3r"]
-
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_mkhwi"]
-size = Vector2(782.216, 26.0869)
+[ext_resource type="PackedScene" uid="uid://28ntltbbj4x0" path="res://ui/menu.tscn" id="4_p84ku"]
+[ext_resource type="Script" path="res://players/camera.gd" id="6_7fmjg"]
+[ext_resource type="PackedScene" uid="uid://dk83gyva5s0yc" path="res://enemies/pupet/pupet.tscn" id="7_7743p"]
 
 [node name="Test" type="Node2D"]
 
-[node name="StaticBody2D" type="StaticBody2D" parent="."]
-visible = false
+[node name="projectie" parent="." instance=ExtResource("1_icy0e")]
 
-[node name="Sprite2D" type="Sprite2D" parent="StaticBody2D"]
-position = Vector2(3053, -38)
-texture = ExtResource("1_1awea")
+[node name="dame_text" type="Node2D" parent="."]
 
-[node name="StaticBody2D2" type="StaticBody2D" parent="."]
+[node name="level" type="Node2D" parent="."]
 
-[node name="PlayGround" type="Polygon2D" parent="StaticBody2D2"]
-position = Vector2(100.346, -8.46793)
-scale = Vector2(0.962234, 1.00553)
-invert_enabled = true
-polygon = PackedVector2Array(2657, -277, 2659.08, 1519.07, 5757.08, 1519.07, 5744, -268)
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D2"]
-position = Vector2(4273, 1578.5)
-scale = Vector2(4.715, 4.715)
-shape = SubResource("RectangleShape2D_mkhwi")
-debug_color = Color(0.744774, 0.460028, 0.149556, 0.42)
-
-[node name="Polygon2D" type="Polygon2D" parent="."]
-position = Vector2(559, -419)
-polygon = PackedVector2Array(3157, 895, 3094, 1276, 3183, 1289)
+[node name="test_level" parent="level" instance=ExtResource("2_y1giq")]
+position = Vector2(480, 221)
 
 [node name="ui" type="CanvasLayer" parent="."]
 
+[node name="Menu" parent="ui" instance=ExtResource("4_p84ku")]
+anchors_preset = 0
+anchor_right = 0.0
+anchor_bottom = 0.0
+offset_right = 390.0
+offset_bottom = 400.0
+grow_horizontal = 1
+grow_vertical = 1
+
 [node name="minimap" parent="ui" instance=ExtResource("3_rah3r")]
+anchors_preset = 1
+anchor_left = 1.0
+anchor_right = 1.0
+offset_left = -200.0
+offset_right = 0.0
+grow_horizontal = 0
 target = NodePath("../../Player")
 
 [node name="Player" parent="." instance=ExtResource("2_w4km3")]
-position = Vector2(4599, 968)
+position = Vector2(5369, 1157)
 
 [node name="Camera2D" type="Camera2D" parent="Player"]
 position = Vector2(-1, -12)
+offset = Vector2(300, -150)
+zoom = Vector2(0.465, 0.465)
+script = ExtResource("6_7fmjg")
+
+[node name="Pupet" parent="." instance=ExtResource("7_7743p")]
+position = Vector2(5681, 1160)
+
+[node name="Pupet2" parent="." instance=ExtResource("7_7743p")]
+position = Vector2(5905, 630)
+
+[node name="Pupet3" parent="." instance=ExtResource("7_7743p")]
+position = Vector2(4536, 1344)
+
+[node name="Pupet4" parent="." instance=ExtResource("7_7743p")]
+position = Vector2(4505, 1052)

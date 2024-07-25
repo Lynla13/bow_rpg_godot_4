@@ -3,7 +3,7 @@ class_name PLayerDash
 
 @export var actor : PLayer
 @export var player : PLAYER
-@export var animator : AnimationPlayer
+@export var animator : AnimatedSprite2D
 
 signal _jump
 signal _walk
@@ -18,7 +18,6 @@ func _enter_state () ->void :
 
 func _exit_state () ->void :
 	set_physics_process(true)
-	print ("out")
 	
 func physics_process () : 
 #Chek ground -> set run and jump

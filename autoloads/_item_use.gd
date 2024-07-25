@@ -2,7 +2,8 @@ extends Node
 
 var item : ITEM
 var player :PLAYER
-
+var equipment :Array[ITEM] = [null,null,null,null,null] 
+var value : int 
 signal _item_was_used ()
 signal _reload ()
 signal _use_item (item)
@@ -30,20 +31,32 @@ func __on_description_item (_item) :
 	emit_signal("_description_item", _item)
 
 func __remove_quickuse (_item) :
-	pass
 	emit_signal("_reload")
 
 func __add_quickuse (_item) :
 	emit_signal("_reload")
 	
 func __equip_item (_item) :
-	if item is ITEM: 
+	if _item is ITEM:
+		var x = _item.TYPE
+		match x :
+			1: 	equipment[0] = _item
+			2 :	equipment[1] = _item
+			3 :	equipment[2] = _item
+			4 :	equipment[3] = _item
+			5 :	equipment[4] = _item
 		emit_signal("_equip_item", _item)
 		emit_signal("_reload")
 
 func __remove_equip (_item): 
+	var x = _item.TYPE
+	match x :
+		1: 	equipment[0] = null
+		2 :	equipment[1] = null
+		3 :	equipment[2] = null
+		4 :	equipment[3] = null
+		5 :	equipment[4] = null
 	emit_signal("_remove_equip", _item)
 	emit_signal("_reload")
 
-func _fire_arrow () :
-	emit_signal("fire")
+

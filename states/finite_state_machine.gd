@@ -11,3 +11,9 @@ func _change_state (new_state: STATE) :
 		current_state._exit_state()
 	new_state._enter_state()
 	current_state = new_state
+
+#func _label_state (state):
+	#if label: 
+		#label.text = str(state)
+	#else :
+		#print ("bye")

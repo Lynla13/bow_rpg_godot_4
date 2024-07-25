@@ -1,0 +1,14 @@
+[gd_resource type="Resource" script_class="BULLET" load_steps=3 format=3 uid="uid://dmsem05dh8smn"]
+
+[ext_resource type="PackedScene" uid="uid://lrhyokxvu6ow" path="res://items/bullets/teleport_arrow/teleport.tscn" id="1_i0crn"]
+[ext_resource type="Script" path="res://items/bullets/bullet.gd" id="2_al33t"]
+
+[resource]
+script = ExtResource("2_al33t")
+NAME = "bullet"
+TYPE = 0
+ELEMENT = 0
+QUANTITY = 0
+LEVEL = 0
+ALIVE_TIME = 100
+BULLET = ExtResource("1_i0crn")

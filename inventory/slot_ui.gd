@@ -16,20 +16,25 @@ func _ready():
 	
 	
 func _display_item (item) :
+	_button_config (item) 
 	if item is ITEM :
 		slot.show()
 		item_texture.texture = item.TEXTURE
 		item_label.text = str (item.NAME)
-	if item.QUANTITY >=1 :
+	if item.QUANTITY >=0 :
 			item_quantity.show()
 			item_quantity.text = str (item.QUANTITY)
 	else :
 		item_quantity.hide ()
 	item_f = item
+	
+func _button_config (item) :
+	if item.QUANTITY ==0 :	equip.hide ()
+	else :	 equip.show ()
+
 
 func _on_item_use():
 	if item_f is ITEM and item_f != null: 
 		item_f._is_use()
-		print ("hello")
 #		ItemUse._remove_item(item_f)
 		#ItemUse._on_description_item (item_f) 

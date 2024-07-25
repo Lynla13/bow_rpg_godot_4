@@ -3,7 +3,7 @@ class_name PLayerIdle
 
 @export var actor : PLayer
 @export var player_data : PLAYER
-@export var animator : AnimationPlayer
+@export var animator : AnimatedSprite2D
 
 signal _jump
 signal  _walk
@@ -14,11 +14,14 @@ func _ready():
 
 func _enter_state () ->void :
 	set_physics_process(true)
-	#animator.play("idle")
+	_animation ()
 
 func _exit_state () ->void :
-	set_physics_process(true)
+	set_physics_process(false)
 	
+func _animation () :
+	animator.play("idle")
+
 
 func _physics_process(delta): 
 	actor.velocity.x = 0

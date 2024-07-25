@@ -1,0 +1,30 @@
+[gd_scene load_steps=4 format=3 uid="uid://xkrmbufqlvyc"]
+
+[ext_resource type="Script" path="res://enemies/wolf/wolf.gd" id="1_luh0g"]
+[ext_resource type="Script" path="res://states/state.gd" id="2_suhml"]
+[ext_resource type="Script" path="res://enemies/pupet/state/pupet_wonder.gd" id="3_rd1lo"]
+
+[node name="Wolf" type="CharacterBody2D"]
+script = ExtResource("1_luh0g")
+
+[node name="wolf" type="Node2D" parent="."]
+
+[node name="Skeleton2D" type="Skeleton2D" parent="wolf"]
+
+[node name="upper" type="Node2D" parent="wolf"]
+
+[node name="lower" type="Node2D" parent="wolf"]
+
+[node name="tk_feet_left" type="Node2D" parent="wolf"]
+
+[node name="tk_feet_right" type="Node2D" parent="wolf"]
+
+[node name="STATE" type="Node" parent="."]
+script = ExtResource("2_suhml")
+
+[node name="EnemyWonder" type="Node" parent="STATE"]
+script = ExtResource("3_rd1lo")
+
+[node name="RayCast2D" type="RayCast2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]

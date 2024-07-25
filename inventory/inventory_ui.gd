@@ -9,9 +9,9 @@ func _ready():
 	inventory._item_change.connect (inventory._make_item_unique)
 	inventory._make_item_unique () 
 	_update_inventory ()
+	
 # Called when the node enters the scene tree for the first time.
 func _update_inventory ():
-	print ("reoload")
 	for item_index in inventory.items.size ():
 		_update_inventory_slot(item_index)
 
