@@ -84,7 +84,6 @@ func _on_equip_item (item):
 	if item.TYPE == 4: 		cape.add_child(equipment_intance)
 	if item.TYPE == 5: 
 			weapon.add_child(equipment_intance)
-			player.WEAPON = weapon.get_child(0).weapon
 	if weapon.get_children().size() > 1 : 		weapon.get_child (0).queue_free()
 	if top.get_children().size() > 1 : 		top.get_child(0).queue_free()
 	if bottom.get_children().size() > 1 : 		bottom.get_child (0).queue_free()

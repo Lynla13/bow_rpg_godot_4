@@ -17,13 +17,13 @@ func _enter_state () ->void :
 func _exit_state () ->void :
 	set_physics_process(true)
 	
-func physics_process () : 
-#Chek ground -> set run and jump
-	pass
+func _physics_process (delta) : 
+	if actor.enemy_data.HP <= 0 :
+		emit_signal("_death")
 	
 func _dame (dame) :
-	print (dame)
+	Physiz.__show_dame(dame, actor)
 
 func _knock_back () :
 	pass
-	
+

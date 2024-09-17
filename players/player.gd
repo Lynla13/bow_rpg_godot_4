@@ -11,9 +11,6 @@ enum _status
 var CRIT_DAME : int
 var CRIT_RATE : int
 @export var MANA: int
-@export var MIN_DAME : int
-@export var MAX_DAME : int
-@export var DAME_DELTA_TIME : int
 @export var WEAPON : ITEM
 signal _die (a,b)
 signal _health_change (a,b)

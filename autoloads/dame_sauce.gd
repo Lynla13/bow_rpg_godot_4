@@ -5,13 +5,16 @@ var player_data = preload("res://players/player.tres")
 #todo : finnish this file
 #todo : finnish effect and state 
 var dame 
+var total_dame : int
+var total_crt_rate : int
 
 signal  sn_deal_dame (dame)  
 
-func _deal_dame ():
-	print (dame)
-	emit_signal("sn_deal_dame", dame)
+func _deal_dame (target):
+	target.emit_signal("_enemy_hurt")
+	target.emit_signal("_target_dame", total_dame)
 	
+
 func _enemy_get_dame ():
 	pass
 	

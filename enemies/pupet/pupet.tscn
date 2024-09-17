@@ -47,11 +47,13 @@ actor = NodePath("../../..")
 script = ExtResource("6_yt1l1")
 actor = NodePath("../../..")
 
-[node name="EnemyDeath" type="Node" parent="Sprite2D/FiniteStateMachine"]
+[node name="EnemyDeath" type="Node" parent="Sprite2D/FiniteStateMachine" node_paths=PackedStringArray("actor")]
 script = ExtResource("7_uqiv3")
+actor = NodePath("../../..")
 
-[node name="EnemyHurt" type="Node" parent="Sprite2D/FiniteStateMachine"]
+[node name="EnemyHurt" type="Node" parent="Sprite2D/FiniteStateMachine" node_paths=PackedStringArray("actor")]
 script = ExtResource("8_y7da2")
+actor = NodePath("../../..")
 
 [node name="PupetAttack" type="Node" parent="Sprite2D/FiniteStateMachine" node_paths=PackedStringArray("actor")]
 script = ExtResource("7_uvhoq")

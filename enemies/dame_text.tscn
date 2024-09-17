@@ -1,0 +1,26 @@
+[gd_scene load_steps=2 format=3 uid="uid://ck6s8c57xh16q"]
+
+[ext_resource type="Script" path="res://enemies/dame_text.gd" id="1_82ppn"]
+
+[node name="dame_text" type="Node2D"]
+script = ExtResource("1_82ppn")
+
+[node name="Dame" type="Label" parent="."]
+offset_left = -44.0
+offset_top = -30.0
+offset_right = 43.0
+offset_bottom = 39.0
+theme_override_font_sizes/font_size = 50
+text = "100"
+
+[node name="Crit_dame" type="Label" parent="."]
+modulate = Color(0.956863, 0.698039, 0, 1)
+offset_right = 40.0
+offset_bottom = 23.0
+theme_override_font_sizes/font_size = 100
+text = "100"
+
+[node name="Miss" type="Label" parent="."]
+offset_right = 40.0
+offset_bottom = 23.0
+text = "100"

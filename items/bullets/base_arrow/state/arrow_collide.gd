@@ -1,5 +1,5 @@
 extends STATE
-class_name Arrow_Collide
+class_name Base_Arrow_Collide
 
 @export var actor : Area2D
 var tween : Tween
@@ -29,5 +29,6 @@ func _tween ():
 
 
 func _on_arrow_fire__collie_data(target):
-	#DameSauce.
+	if target.get_collision_layer() == 4 || target.get_collision_layer() == 8:
+		DameSauce._deal_dame(target)
 	pass

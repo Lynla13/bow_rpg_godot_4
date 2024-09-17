@@ -10,10 +10,8 @@ signal _see_player
 signal _hurt
 signal _death
 var direction = 1
-var enemy_data 
 
 func _ready():
-	actor._enemy_data.connect (self._enemy_data)
 	set_physics_process(false)
 
 func _enter_state () ->void :
@@ -21,7 +19,6 @@ func _enter_state () ->void :
 	
 
 func _exit_state () ->void :
-	print ('exit')
 	set_physics_process(false)
 	
 func _physics_process (delta) : 
@@ -31,9 +28,7 @@ func _physics_process (delta) :
 			actor.scale.x *= -1
 		elif  eyes.get_collider().get_collision_layer() == 1 :
 			_see_player.emit()
-	actor.velocity.x = direction * enemy_data.SPEED*delta
+	actor.velocity.x = direction *actor.enemy_data.SPEED*delta
 	
 
-func _enemy_data (data) :
-	enemy_data = data
-	
+

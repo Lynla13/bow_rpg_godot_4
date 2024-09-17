@@ -5,7 +5,7 @@
 [resource]
 script = ExtResource("1_br4tt")
 NAME = "Pupet"
-HP = 1000
+HP = 10000000
 SPEED = 5000
 DAM = 0
 LEVEL = 0

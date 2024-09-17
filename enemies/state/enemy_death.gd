@@ -13,7 +13,7 @@ func _enter_state () ->void :
 func _exit_state () ->void :
 	set_physics_process(false)
 	
-func physics_process () : 
-#Chek ground -> set run and jump
+func _physics_process (delta) : 
+	actor.queue_free()
 	pass
 	

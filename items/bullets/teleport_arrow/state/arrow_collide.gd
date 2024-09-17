@@ -1,5 +1,5 @@
 extends STATE
-class_name Base_Arrow_Collide
+class_name Teleport_Arrow_Collide
 
 @export var actor : Area2D
 var tween : Tween

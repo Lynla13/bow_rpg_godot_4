@@ -1,9 +1,9 @@
 extends STATE
-class_name Arrow_Out
+class_name Health_Arrow_Collide
 
 @export var actor : Area2D
 var tween : Tween
-signal _idle
+signal _out
 
 
 func _ready():
@@ -17,11 +17,18 @@ func _exit_state () ->void :
 	set_physics_process(false)
 	
 func _physics_process (delta) : 
-	_self_destroy ()
+	print ("this is collide")
+	# stsend emit to dam sauce to deal dame to moner
 	
-func _self_destroy ():
-	await get_tree().create_timer(3).timeout
-	actor.queue_free()
+func _collide () :
+	pass
 
 func _tween ():
 	pass
+
+
+func _on_arrow_fire__collie_data(target):
+	#DameSauce.
+	pass
+
+# todo : hoan thanh damsacue truoc sau do laf canh va quai

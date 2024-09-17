@@ -5,7 +5,7 @@
 [ext_resource type="Resource" uid="uid://bkhvfh7uxwryb" path="res://inventory/player_inventory.tres" id="2_r0n4b"]
 
 [node name="inventory" type="Control"]
-custom_minimum_size = Vector2(390, 400)
+custom_minimum_size = Vector2(320, 220)
 layout_mode = 3
 anchors_preset = 0
 offset_right = 40.0
@@ -26,8 +26,11 @@ theme_override_constants/margin_bottom = 10
 custom_minimum_size = Vector2(370, 370)
 layout_mode = 2
 
-[node name="item_container" type="VBoxContainer" parent="Container/Panel"]
+[node name="item_container" type="GridContainer" parent="Container/Panel"]
 layout_mode = 2
+theme_override_constants/h_separation = 10
+theme_override_constants/v_separation = 10
+columns = 5
 
 [node name="Slot2" parent="Container/Panel/item_container" instance=ExtResource("1_7ckxf")]
 layout_mode = 2

@@ -22,7 +22,7 @@ func _use_weapon (rotation) :
 
 # first click fire the arrow
 func _shot(rotation) :
-	var power = weapon.MIN_DAME
+	var power = 60
 	Physiz.__fire_arrow(projectie.global_position, rotation, power)
 
 

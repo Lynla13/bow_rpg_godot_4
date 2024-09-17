@@ -11,7 +11,8 @@ var gravity = ProjectSettings.get_setting("physics/2d/default_gravity")
 @onready var pupet_attack = $Sprite2D/FiniteStateMachine/PupetAttack
 
 signal _enemy_data (data)
-
+signal _enemy_hurt (dame)
+signal _target_dame (dame)
 # Called when the node enters the scene tree for the first time.
 func _ready():
 	emit_signal("_enemy_data",enemy_data)
@@ -29,7 +30,9 @@ func _ready():
 	pupet_attack._wonder.connect (fsm._change_state.bind (pupet_wonder))
 	
 	#hurt
-	DameSauce.sn_deal_dame.connect(fsm._change_state.bind (enemy_hurt))
+	enemy_hurt._death.connect (fsm._change_state.bind (enemy_death))
+	self._enemy_hurt.connect(fsm._change_state.bind (enemy_hurt))
+	self._target_dame.connect (self.__is_dame)
 
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
@@ -40,3 +43,9 @@ func _physics_process(delta):
 func _gravity (delta) :
 	if not is_on_floor():
 		velocity.y += gravity * delta
+	
+func __is_dame (dame) :
+	enemy_data.HP -= dame
+	Physiz.__show_dame(dame, self)
+	if enemy_data.HP < 0 :
+		enemy_data.HP = 0

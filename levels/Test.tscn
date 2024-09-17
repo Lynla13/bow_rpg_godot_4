@@ -1,5 +1,6 @@
-[gd_scene load_steps=8 format=3 uid="uid://cihh3pramsxc3"]
+[gd_scene load_steps=9 format=3 uid="uid://cihh3pramsxc3"]
 
+[ext_resource type="PackedScene" uid="uid://ck6s8c57xh16q" path="res://enemies/dame_text.tscn" id="1_5qm4x"]
 [ext_resource type="PackedScene" uid="uid://ckrhensk25mia" path="res://items/projectie.tscn" id="1_icy0e"]
 [ext_resource type="PackedScene" uid="uid://bv75iulx2oydl" path="res://players/player.tscn" id="2_w4km3"]
 [ext_resource type="PackedScene" uid="uid://dyr8ka6bajaj8" path="res://levels/test_level.tscn" id="2_y1giq"]
@@ -10,7 +11,11 @@
 
 [node name="Test" type="Node2D"]
 
-[node name="projectie" parent="." instance=ExtResource("1_icy0e")]
+[node name="Equip_for_level" type="Node" parent="."]
+
+[node name="dame_text" parent="Equip_for_level" instance=ExtResource("1_5qm4x")]
+
+[node name="projectie" parent="Equip_for_level" instance=ExtResource("1_icy0e")]
 
 [node name="dame_text" type="Node2D" parent="."]
 

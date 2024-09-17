@@ -1,4 +1,4 @@
-[gd_resource type="Resource" script_class="INVENTORY" load_steps=7 format=3 uid="uid://bkhvfh7uxwryb"]
+[gd_resource type="Resource" script_class="INVENTORY" load_steps=8 format=3 uid="uid://bkhvfh7uxwryb"]
 
 [ext_resource type="PackedScene" uid="uid://b6yx0rcvth7lg" path="res://items/weapons/weapon/bow.tscn" id="1_bwnsn"]
 [ext_resource type="Texture2D" uid="uid://wgn3qrkrtwou" path="res://icon.svg" id="1_wogva"]
@@ -45,6 +45,25 @@ STAR = 0
 MAX_STACK = 60
 ITEM = ExtResource("1_bwnsn")
 
+[sub_resource type="Resource" id="Resource_m8ath"]
+script = ExtResource("2_aj80w")
+NAME = "hahaha"
+TEXTURE = ExtResource("1_wogva")
+QUANTITY = 0
+SPEED = 0
+KNOCKBACK = 0
+HEALTH = 0
+MIN_DAME = 0
+MAX_DAME = 0
+CRTDAM = 0
+TYPE = 0
+STACKABLE = true
+COMSUMABLE = false
+IS_EQUIPED = false
+DESCRIPTION = ""
+STAR = 0
+MAX_STACK = 60
+
 [resource]
 script = ExtResource("2_fg4uh")
-items = Array[ExtResource("2_aj80w")]([SubResource("Resource_6h7j4"), SubResource("Resource_vaj8j")])
+items = Array[ExtResource("2_aj80w")]([SubResource("Resource_6h7j4"), SubResource("Resource_vaj8j"), SubResource("Resource_m8ath")])
