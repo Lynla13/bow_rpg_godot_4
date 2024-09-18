@@ -74,8 +74,18 @@ func _on_Player_weapon_use():
 		if  weapon.get_children() != []: 
 			arr [0]._use_weapon (upper.rotation_degrees)
 
-
+#Set dame sauce here
 func _on_equip_item (item): 
+	#Add stat to DameSauce
+	DameControl.total_dame += item.DAME
+	DameControl.total_crtrate += item.CRTRATE
+	DameControl.total_crtdame += item.CRTDAME
+	DameControl.total_knockback += item.KNOCKBACK
+	DameControl.total_def += item.DEF
+	#Direct to player
+	player.HEALTH += item.HEALTH
+	player.SPEED += item.SPEED
+	#Eqip
 	var equip_ = item.ITEM
 	var equipment_intance = equip_.instantiate()
 	if item.TYPE == 1: 		top.add_child(equipment_intance)
@@ -92,6 +102,14 @@ func _on_equip_item (item):
 
 
 func _on_remove_equip (item): 
+	DameControl.total_dame -= item.DAME
+	DameControl.total_crtrate -= item.CRTRATE
+	DameControl.total_dame -= item.CRTDAME
+	DameControl.total_def -= item.DEF
+	DameControl.total_knockback -= item.KNOCKBACK
+	# Direct to player
+	player.HEALTH -= item.HEALTH
+	player.SPEED -= item.SPEED
 	if item.TYPE == 1: 		top.get_child (0).queue_free()
 	if item.TYPE == 2 : 		bottom.get_child (0).queue_free()
 	if item.TYPE == 3 : 		hat.get_child (0).queue_free()

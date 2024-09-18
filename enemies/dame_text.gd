@@ -17,10 +17,15 @@ func _process(delta):
 	pass
 	
 func _dame_text (dame, target) :
-	dame_t.position.x = randf_range(target.position.x-50, target.position.x +50)
-	dame_t.position.y = randf_range(target.position.y -180, target.position.y -210)
-	dame_t.text = str (dame)
-	dame_t.show()
+	if DameControl.is_crt :
+		_normal_dame (crit_dame,dame,target)
+	if !DameControl.is_crt :
+		_normal_dame (dame_t,dame,target)
+		
+func _normal_dame (text,dame,target) :
+	text.position.x = randf_range(target.position.x-100, target.position.x +100)
+	text.position.y = randf_range(target.position.y -180, target.position.y -210)
+	text.text = str (dame)
+	text.show()
 	await get_tree().create_timer(0.4).timeout
-	dame_t.hide()
-	print ("dame", "dame", dame)
+	text.hide()

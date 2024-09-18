@@ -31,4 +31,3 @@ func _on_arrow_fire__collie_data(target):
 	#DameSauce.
 	pass
 
-# todo : hoan thanh damsacue truoc sau do laf canh va quai

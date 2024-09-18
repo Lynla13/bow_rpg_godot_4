@@ -6,11 +6,7 @@
 script = ExtResource("1_r7164")
 NAME = "sdasd"
 STATUS = 0
-CLASS = 0
 DETAIL = ""
-POWER = 100
 SPEED = 300
-FIRE_SPEED = 0
 HEALTH = 0
 MANA = 0
-DIRECTION = 0

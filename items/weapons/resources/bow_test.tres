@@ -6,7 +6,7 @@
 [resource]
 script = ExtResource("1_s3xu5")
 NAME = "Bow"
-QUANTITY = 0
+QUANTITY = 100
 SPEED = 0
 KNOCKBACK = 0
 HEALTH = 0

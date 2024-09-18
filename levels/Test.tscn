@@ -50,7 +50,7 @@ position = Vector2(5369, 1157)
 [node name="Camera2D" type="Camera2D" parent="Player"]
 position = Vector2(-1, -12)
 offset = Vector2(300, -150)
-zoom = Vector2(0.465, 0.465)
+zoom = Vector2(0.825, 0.825)
 script = ExtResource("6_7fmjg")
 
 [node name="Pupet" parent="." instance=ExtResource("7_7743p")]

@@ -30,5 +30,5 @@ func _tween ():
 
 func _on_arrow_fire__collie_data(target):
 	if target.get_collision_layer() == 4 || target.get_collision_layer() == 8:
-		DameSauce._deal_dame(target)
+		DameControl._deal_dame(target)
 	pass

@@ -19,7 +19,7 @@ config/icon="res://icon.svg"
 
 ItemUse="*res://autoloads/_item_use.gd"
 Physiz="*res://autoloads/physiz.gd"
-DameSauce="*res://autoloads/dame_sauce.gd"
+DameControl="*res://autoloads/dame_control.gd"
 
 [display]
 
