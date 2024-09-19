@@ -12,10 +12,6 @@ func _ready():
 	Physiz._show_dame.connect(self._dame_text)
 
 
-# Called every frame. 'delta' is the elapsed time since the previous frame.
-func _process(delta):
-	pass
-	
 func _dame_text (dame, target) :
 	if DameControl.is_crt :
 		_normal_dame (crit_dame,dame,target)
