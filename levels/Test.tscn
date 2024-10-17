@@ -1,9 +1,10 @@
-[gd_scene load_steps=9 format=3 uid="uid://cihh3pramsxc3"]
+[gd_scene load_steps=10 format=3 uid="uid://cihh3pramsxc3"]
 
 [ext_resource type="PackedScene" uid="uid://ck6s8c57xh16q" path="res://enemies/dame_text.tscn" id="1_5qm4x"]
 [ext_resource type="PackedScene" uid="uid://ckrhensk25mia" path="res://items/projectie.tscn" id="1_icy0e"]
 [ext_resource type="PackedScene" uid="uid://bv75iulx2oydl" path="res://players/player.tscn" id="2_w4km3"]
 [ext_resource type="PackedScene" uid="uid://dyr8ka6bajaj8" path="res://levels/test_level.tscn" id="2_y1giq"]
+[ext_resource type="PackedScene" uid="uid://ckv6snsdvqsmo" path="res://levels/dirt.tscn" id="3_8e2u3"]
 [ext_resource type="PackedScene" uid="uid://cb8tm0rlby324" path="res://ui/minimap.tscn" id="3_rah3r"]
 [ext_resource type="PackedScene" uid="uid://28ntltbbj4x0" path="res://ui/menu.tscn" id="4_p84ku"]
 [ext_resource type="Script" path="res://players/camera.gd" id="6_7fmjg"]
@@ -17,12 +18,208 @@
 
 [node name="projectie" parent="Equip_for_level" instance=ExtResource("1_icy0e")]
 
+[node name="Ground" type="Node2D" parent="Equip_for_level"]
+position = Vector2(3086, 1681)
+
+[node name="dirt" parent="Equip_for_level/Ground" instance=ExtResource("3_8e2u3")]
+
+[node name="dirt2" parent="Equip_for_level/Ground" instance=ExtResource("3_8e2u3")]
+position = Vector2(64, 0)
+
+[node name="dirt3" parent="Equip_for_level/Ground" instance=ExtResource("3_8e2u3")]
+position = Vector2(128, 0)
+
+[node name="dirt4" parent="Equip_for_level/Ground" instance=ExtResource("3_8e2u3")]
+position = Vector2(192, 0)
+
+[node name="dirt5" parent="Equip_for_level/Ground" instance=ExtResource("3_8e2u3")]
+position = Vector2(255, 0)
+
+[node name="dirt6" parent="Equip_for_level/Ground" instance=ExtResource("3_8e2u3")]
+position = Vector2(319, 0)
+
+[node name="dirt7" parent="Equip_for_level/Ground" instance=ExtResource("3_8e2u3")]
+position = Vector2(383, 0)
+
+[node name="dirt8" parent="Equip_for_level/Ground" instance=ExtResource("3_8e2u3")]
+position = Vector2(447, 0)
+
+[node name="dirt9" parent="Equip_for_level/Ground" instance=ExtResource("3_8e2u3")]
+position = Vector2(509, 1)
+
+[node name="dirt10" parent="Equip_for_level/Ground" instance=ExtResource("3_8e2u3")]
+position = Vector2(573, 1)
+
+[node name="dirt11" parent="Equip_for_level/Ground" instance=ExtResource("3_8e2u3")]
+position = Vector2(637, 1)
+
+[node name="dirt12" parent="Equip_for_level/Ground" instance=ExtResource("3_8e2u3")]
+position = Vector2(701, 1)
+
+[node name="dirt13" parent="Equip_for_level/Ground" instance=ExtResource("3_8e2u3")]
+position = Vector2(764, 1)
+
+[node name="dirt14" parent="Equip_for_level/Ground" instance=ExtResource("3_8e2u3")]
+position = Vector2(828, 1)
+
+[node name="dirt15" parent="Equip_for_level/Ground" instance=ExtResource("3_8e2u3")]
+position = Vector2(892, 1)
+
+[node name="dirt16" parent="Equip_for_level/Ground" instance=ExtResource("3_8e2u3")]
+position = Vector2(956, 1)
+
+[node name="dirt17" parent="Equip_for_level/Ground" instance=ExtResource("3_8e2u3")]
+position = Vector2(1018, 1)
+
+[node name="dirt18" parent="Equip_for_level/Ground" instance=ExtResource("3_8e2u3")]
+position = Vector2(1082, 1)
+
+[node name="dirt19" parent="Equip_for_level/Ground" instance=ExtResource("3_8e2u3")]
+position = Vector2(1146, 1)
+
+[node name="dirt20" parent="Equip_for_level/Ground" instance=ExtResource("3_8e2u3")]
+position = Vector2(1210, 1)
+
+[node name="dirt21" parent="Equip_for_level/Ground" instance=ExtResource("3_8e2u3")]
+position = Vector2(1273, 1)
+
+[node name="dirt22" parent="Equip_for_level/Ground" instance=ExtResource("3_8e2u3")]
+position = Vector2(1337, 1)
+
+[node name="dirt23" parent="Equip_for_level/Ground" instance=ExtResource("3_8e2u3")]
+position = Vector2(1401, 1)
+
+[node name="dirt24" parent="Equip_for_level/Ground" instance=ExtResource("3_8e2u3")]
+position = Vector2(1465, 1)
+
+[node name="dirt25" parent="Equip_for_level/Ground" instance=ExtResource("3_8e2u3")]
+position = Vector2(1527, 2)
+
+[node name="dirt26" parent="Equip_for_level/Ground" instance=ExtResource("3_8e2u3")]
+position = Vector2(1591, 2)
+
+[node name="dirt27" parent="Equip_for_level/Ground" instance=ExtResource("3_8e2u3")]
+position = Vector2(1655, 2)
+
+[node name="dirt28" parent="Equip_for_level/Ground" instance=ExtResource("3_8e2u3")]
+position = Vector2(1719, 2)
+
+[node name="dirt29" parent="Equip_for_level/Ground" instance=ExtResource("3_8e2u3")]
+position = Vector2(1782, 2)
+
+[node name="dirt30" parent="Equip_for_level/Ground" instance=ExtResource("3_8e2u3")]
+position = Vector2(1846, 2)
+
+[node name="dirt31" parent="Equip_for_level/Ground" instance=ExtResource("3_8e2u3")]
+position = Vector2(1910, 2)
+
+[node name="dirt32" parent="Equip_for_level/Ground" instance=ExtResource("3_8e2u3")]
+position = Vector2(1974, 2)
+
+[node name="dirt33" parent="Equip_for_level/Ground" instance=ExtResource("3_8e2u3")]
+position = Vector2(2038, 2)
+
+[node name="dirt34" parent="Equip_for_level/Ground" instance=ExtResource("3_8e2u3")]
+position = Vector2(2102, 2)
+
+[node name="dirt35" parent="Equip_for_level/Ground" instance=ExtResource("3_8e2u3")]
+position = Vector2(2166, 2)
+
+[node name="dirt36" parent="Equip_for_level/Ground" instance=ExtResource("3_8e2u3")]
+position = Vector2(2230, 2)
+
+[node name="dirt37" parent="Equip_for_level/Ground" instance=ExtResource("3_8e2u3")]
+position = Vector2(2293, 2)
+
+[node name="dirt38" parent="Equip_for_level/Ground" instance=ExtResource("3_8e2u3")]
+position = Vector2(2357, 2)
+
+[node name="dirt39" parent="Equip_for_level/Ground" instance=ExtResource("3_8e2u3")]
+position = Vector2(2421, 2)
+
+[node name="dirt40" parent="Equip_for_level/Ground" instance=ExtResource("3_8e2u3")]
+position = Vector2(2485, 2)
+
+[node name="dirt41" parent="Equip_for_level/Ground" instance=ExtResource("3_8e2u3")]
+position = Vector2(2547, 3)
+
+[node name="dirt42" parent="Equip_for_level/Ground" instance=ExtResource("3_8e2u3")]
+position = Vector2(2611, 3)
+
+[node name="dirt43" parent="Equip_for_level/Ground" instance=ExtResource("3_8e2u3")]
+position = Vector2(2675, 3)
+
+[node name="dirt44" parent="Equip_for_level/Ground" instance=ExtResource("3_8e2u3")]
+position = Vector2(2739, 3)
+
+[node name="dirt45" parent="Equip_for_level/Ground" instance=ExtResource("3_8e2u3")]
+position = Vector2(2802, 3)
+
+[node name="dirt46" parent="Equip_for_level/Ground" instance=ExtResource("3_8e2u3")]
+position = Vector2(2866, 3)
+
+[node name="dirt47" parent="Equip_for_level/Ground" instance=ExtResource("3_8e2u3")]
+position = Vector2(2930, 3)
+
+[node name="dirt48" parent="Equip_for_level/Ground" instance=ExtResource("3_8e2u3")]
+position = Vector2(2994, 3)
+
+[node name="dirt49" parent="Equip_for_level/Ground" instance=ExtResource("3_8e2u3")]
+position = Vector2(3056, 3)
+
+[node name="dirt50" parent="Equip_for_level/Ground" instance=ExtResource("3_8e2u3")]
+position = Vector2(3120, 3)
+
+[node name="dirt51" parent="Equip_for_level/Ground" instance=ExtResource("3_8e2u3")]
+position = Vector2(3184, 3)
+
+[node name="dirt52" parent="Equip_for_level/Ground" instance=ExtResource("3_8e2u3")]
+position = Vector2(3248, 3)
+
+[node name="dirt53" parent="Equip_for_level/Ground" instance=ExtResource("3_8e2u3")]
+position = Vector2(3311, 3)
+
+[node name="dirt54" parent="Equip_for_level/Ground" instance=ExtResource("3_8e2u3")]
+position = Vector2(3375, 3)
+
+[node name="dirt55" parent="Equip_for_level/Ground" instance=ExtResource("3_8e2u3")]
+position = Vector2(3439, 3)
+
+[node name="dirt56" parent="Equip_for_level/Ground" instance=ExtResource("3_8e2u3")]
+position = Vector2(3503, 3)
+
+[node name="dirt57" parent="Equip_for_level/Ground" instance=ExtResource("3_8e2u3")]
+position = Vector2(3565, 4)
+
+[node name="dirt58" parent="Equip_for_level/Ground" instance=ExtResource("3_8e2u3")]
+position = Vector2(3629, 4)
+
+[node name="dirt59" parent="Equip_for_level/Ground" instance=ExtResource("3_8e2u3")]
+position = Vector2(3693, 4)
+
+[node name="dirt60" parent="Equip_for_level/Ground" instance=ExtResource("3_8e2u3")]
+position = Vector2(3757, 4)
+
+[node name="dirt61" parent="Equip_for_level/Ground" instance=ExtResource("3_8e2u3")]
+position = Vector2(3820, 4)
+
+[node name="dirt62" parent="Equip_for_level/Ground" instance=ExtResource("3_8e2u3")]
+position = Vector2(3884, 4)
+
+[node name="dirt63" parent="Equip_for_level/Ground" instance=ExtResource("3_8e2u3")]
+position = Vector2(3948, 4)
+
+[node name="dirt64" parent="Equip_for_level/Ground" instance=ExtResource("3_8e2u3")]
+position = Vector2(4012, 4)
+
 [node name="dame_text" type="Node2D" parent="."]
 
 [node name="level" type="Node2D" parent="."]
+position = Vector2(222, -120)
 
 [node name="test_level" parent="level" instance=ExtResource("2_y1giq")]
-position = Vector2(480, 221)
+visible = false
+position = Vector2(246, 341)
 
 [node name="ui" type="CanvasLayer" parent="."]
 
@@ -45,22 +242,16 @@ grow_horizontal = 0
 target = NodePath("../../Player")
 
 [node name="Player" parent="." instance=ExtResource("2_w4km3")]
-position = Vector2(5369, 1157)
+position = Vector2(3481, 1451)
 
 [node name="Camera2D" type="Camera2D" parent="Player"]
-position = Vector2(-1, -12)
+position = Vector2(96, -57)
 offset = Vector2(300, -150)
-zoom = Vector2(0.825, 0.825)
+zoom = Vector2(1.295, 1.295)
 script = ExtResource("6_7fmjg")
 
 [node name="Pupet" parent="." instance=ExtResource("7_7743p")]
-position = Vector2(5681, 1160)
+position = Vector2(4642, 1147)
 
 [node name="Pupet2" parent="." instance=ExtResource("7_7743p")]
 position = Vector2(5905, 630)
-
-[node name="Pupet3" parent="." instance=ExtResource("7_7743p")]
-position = Vector2(4536, 1344)
-
-[node name="Pupet4" parent="." instance=ExtResource("7_7743p")]
-position = Vector2(4505, 1052)

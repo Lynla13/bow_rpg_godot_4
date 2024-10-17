@@ -5,7 +5,7 @@
 [ext_resource type="Resource" uid="uid://bkhvfh7uxwryb" path="res://inventory/player_inventory.tres" id="2_r0n4b"]
 
 [node name="inventory" type="Control"]
-custom_minimum_size = Vector2(320, 220)
+custom_minimum_size = Vector2(310, 200)
 layout_mode = 3
 anchors_preset = 0
 offset_right = 40.0
@@ -14,16 +14,17 @@ script = ExtResource("1_qkvvg")
 inventory = ExtResource("2_r0n4b")
 
 [node name="Container" type="MarginContainer" parent="."]
+custom_minimum_size = Vector2(310, 200)
 layout_mode = 0
-offset_right = 40.0
-offset_bottom = 40.0
+offset_right = 320.0
+offset_bottom = 400.0
 theme_override_constants/margin_left = 10
 theme_override_constants/margin_top = 20
 theme_override_constants/margin_right = 10
 theme_override_constants/margin_bottom = 10
 
 [node name="Panel" type="ScrollContainer" parent="Container"]
-custom_minimum_size = Vector2(370, 370)
+custom_minimum_size = Vector2(310, 200)
 layout_mode = 2
 
 [node name="item_container" type="GridContainer" parent="Container/Panel"]
@@ -63,4 +64,19 @@ layout_mode = 2
 layout_mode = 2
 
 [node name="Slot12" parent="Container/Panel/item_container" instance=ExtResource("1_7ckxf")]
+layout_mode = 2
+
+[node name="Slot13" parent="Container/Panel/item_container" instance=ExtResource("1_7ckxf")]
+layout_mode = 2
+
+[node name="Slot14" parent="Container/Panel/item_container" instance=ExtResource("1_7ckxf")]
+layout_mode = 2
+
+[node name="Slot15" parent="Container/Panel/item_container" instance=ExtResource("1_7ckxf")]
+layout_mode = 2
+
+[node name="Slot16" parent="Container/Panel/item_container" instance=ExtResource("1_7ckxf")]
+layout_mode = 2
+
+[node name="TextureRect" type="TextureRect" parent="Container/Panel"]
 layout_mode = 2

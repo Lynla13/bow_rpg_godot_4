@@ -7,23 +7,20 @@ var player_data = preload("res://players/player.tres")
 # also all your status 
 
 var total_dame : int
-var total_crtrate : int
 var total_crtdame : int
 var total_knockback : int
 var total_def : int
 var is_crt = false
 var base_crt = 100
+var dame_direction
 
 
 signal  sn_deal_dame (dame) 
 
 func _dame_control_deal () :
-	var rng = RandomNumberGenerator.new()
-	if rng.randi_range(0,100) <total_crtrate :	is_crt = true
-	else : is_crt = false
 	if is_crt :	 
 	#caculate the dame deal
-		var crit_dame_deal = ((total_crtdame+base_crt)*total_dame)/100
+		var crit_dame_deal = ((total_crtdame+base_crt)*total_dame)
 		return crit_dame_deal
 	else : 
 		var normal_dame = total_dame
@@ -31,6 +28,7 @@ func _dame_control_deal () :
 	
 #todo : caculate def of enemy
 func _deal_dame (target):
+	print (target)
 	target.emit_signal("_enemy_hurt")
 	target.emit_signal("_target_dame", _dame_control_deal())
 	

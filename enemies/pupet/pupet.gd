@@ -3,17 +3,17 @@ extends CharacterBody2D
 
 @export var enemy_data : ENEMY
 var gravity = ProjectSettings.get_setting("physics/2d/default_gravity")
-@onready var fsm = $Sprite2D/FiniteStateMachine
-@onready var pupet_wonder = $Sprite2D/FiniteStateMachine/PupetWonder
-@onready var enemy_see_player = $Sprite2D/FiniteStateMachine/EnemySeePlayer
-@onready var enemy_death = $Sprite2D/FiniteStateMachine/EnemyDeath
-@onready var enemy_hurt = $Sprite2D/FiniteStateMachine/EnemyHurt
-@onready var pupet_attack = $Sprite2D/FiniteStateMachine/PupetAttack
+@onready var fsm = $Ani/FiniteStateMachine
+@onready var pupet_wonder = $Ani/FiniteStateMachine/PupetWonder
+@onready var enemy_see_player = $Ani/FiniteStateMachine/EnemySeePlayer
+@onready var enemy_death = $Ani/FiniteStateMachine/EnemyDeath
+@onready var enemy_hurt = $Ani/FiniteStateMachine/EnemyHurt
+@onready var pupet_attack = $Ani/FiniteStateMachine/PupetAttack
 
 signal _enemy_data (data)
 signal _enemy_hurt (dame)
 signal _target_dame (dame)
-# Called when the node enters the scene tree for the first time.
+
 func _ready():
 	emit_signal("_enemy_data",enemy_data)
 	#wonder
@@ -32,6 +32,7 @@ func _ready():
 	#hurt
 	enemy_hurt._death.connect (fsm._change_state.bind (enemy_death))
 	self._enemy_hurt.connect(fsm._change_state.bind (enemy_hurt))
+	enemy_hurt._wonder.connect (fsm._change_state.bind(pupet_wonder))
 	self._target_dame.connect (self.__is_dame)
 
 

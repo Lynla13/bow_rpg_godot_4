@@ -78,7 +78,6 @@ func _on_Player_weapon_use():
 func _on_equip_item (item): 
 	#Add stat to DameSauce
 	DameControl.total_dame += item.DAME
-	DameControl.total_crtrate += item.CRTRATE
 	DameControl.total_crtdame += item.CRTDAME
 	DameControl.total_knockback += item.KNOCKBACK
 	DameControl.total_def += item.DEF
@@ -103,7 +102,6 @@ func _on_equip_item (item):
 
 func _on_remove_equip (item): 
 	DameControl.total_dame -= item.DAME
-	DameControl.total_crtrate -= item.CRTRATE
 	DameControl.total_dame -= item.CRTDAME
 	DameControl.total_def -= item.DEF
 	DameControl.total_knockback -= item.KNOCKBACK

@@ -20,3 +20,4 @@ func _update_inventory_slot (item_indexs):
 	var item = inventory.items [item_indexs]
 	# call to slot 's function (not slot_base)
 	inventory_slot_display._display_item (item)
+	

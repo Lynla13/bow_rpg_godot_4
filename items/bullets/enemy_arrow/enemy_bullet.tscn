@@ -1,0 +1,11 @@
+[gd_scene format=3 uid="uid://c151m4krkn6fg"]
+
+[node name="Enemy_bullet" type="Area2D"]
+gravity_space_override = 1
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="."]
+polygon = PackedVector2Array(25, 20, 37, 40, 55, 26, 41, 8)
+
+[node name="Polygon2D" type="Polygon2D" parent="."]
+position = Vector2(9, 7)
+polygon = PackedVector2Array(34, 6, 21, 12, 22, 19, 32, 29, 38, 23, 41, 17, 39, 11)

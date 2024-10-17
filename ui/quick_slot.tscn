@@ -1,6 +1,11 @@
-[gd_scene load_steps=2 format=3 uid="uid://culqsqaxv33q6"]
+[gd_scene load_steps=4 format=3 uid="uid://culqsqaxv33q6"]
 
 [ext_resource type="Script" path="res://ui/quick_slot_ui.gd" id="1_il4k4"]
+[ext_resource type="Texture2D" uid="uid://sjk6h1b85grx" path="res://z_materials/ui_big_pieces.png" id="2_75swb"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_hc54y"]
+atlas = ExtResource("2_75swb")
+region = Rect2(17.1446, 369.156, 53.062, 41.2123)
 
 [node name="quick_slot" type="Control"]
 custom_minimum_size = Vector2(50, 50)
@@ -20,12 +25,23 @@ layout_mode = 0
 offset_right = 40.0
 offset_bottom = 40.0
 
+[node name="Texture2" type="TextureRect" parent="."]
+custom_minimum_size = Vector2(65, 50)
+layout_mode = 2
+offset_right = 65.0
+offset_bottom = 50.0
+texture = SubResource("AtlasTexture_hc54y")
+expand_mode = 1
+
 [node name="MarginContainer" type="MarginContainer" parent="."]
+custom_minimum_size = Vector2(35, 35)
 layout_mode = 0
-offset_right = 40.0
-offset_bottom = 40.0
+offset_left = 23.0
+offset_top = 8.0
+offset_right = 58.0
+offset_bottom = 43.0
 
 [node name="Texture" type="TextureRect" parent="MarginContainer"]
-custom_minimum_size = Vector2(50, 50)
+custom_minimum_size = Vector2(35, 35)
 layout_mode = 2
 expand_mode = 1

@@ -12,7 +12,6 @@ enum _type
 @export var HEALTH : int
 @export var DAME : int 
 @export var CRTDAME : int 
-@export var CRTRATE : int 
 @export var DEF : int
 @export var TYPE : _type
 @export_category("Extra Category")

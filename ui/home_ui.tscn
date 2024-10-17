@@ -1,0 +1,64 @@
+[gd_scene load_steps=2 format=3 uid="uid://bpvp8q3d8078a"]
+
+[sub_resource type="Theme" id="Theme_ep56h"]
+/fonts/Start = null
+
+[node name="home_ui" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="CanvasLayer" type="CanvasLayer" parent="."]
+
+[node name="Start" type="Button" parent="CanvasLayer"]
+anchors_preset = -1
+anchor_left = 0.931
+anchor_top = 0.494
+anchor_right = 0.993
+anchor_bottom = 0.494
+offset_left = -387.984
+offset_top = -26.112
+offset_right = 1.01587
+offset_bottom = 27.888
+grow_horizontal = 0
+grow_vertical = 2
+theme = SubResource("Theme_ep56h")
+text = "Start"
+
+[node name="Continue" type="Button" parent="CanvasLayer"]
+offset_right = 69.0
+offset_bottom = 54.0
+text = "Cntinue
+
+"
+
+[node name="Setting" type="Button" parent="CanvasLayer"]
+anchors_preset = -1
+anchor_left = 0.968
+anchor_top = 0.715
+anchor_right = 0.968
+anchor_bottom = 0.753
+offset_left = -387.136
+offset_top = -27.32
+offset_right = -2.13611
+offset_bottom = 2.056
+grow_horizontal = 0
+grow_vertical = 2
+text = "Setting"
+
+[node name="Credit" type="Button" parent="CanvasLayer"]
+anchors_preset = -1
+anchor_left = 0.966
+anchor_top = 0.603
+anchor_right = 0.966
+anchor_bottom = 0.603
+offset_left = -386.832
+offset_top = -29.744
+offset_right = -1.83203
+offset_bottom = 24.256
+grow_horizontal = 0
+grow_vertical = 2
+text = "Credit"

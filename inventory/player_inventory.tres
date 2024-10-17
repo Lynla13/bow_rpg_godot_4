@@ -1,21 +1,25 @@
-[gd_resource type="Resource" script_class="INVENTORY" load_steps=8 format=3 uid="uid://bkhvfh7uxwryb"]
+[gd_resource type="Resource" script_class="INVENTORY" load_steps=10 format=3 uid="uid://bkhvfh7uxwryb"]
 
 [ext_resource type="PackedScene" uid="uid://b6yx0rcvth7lg" path="res://items/weapons/weapon/bow.tscn" id="1_bwnsn"]
 [ext_resource type="Texture2D" uid="uid://wgn3qrkrtwou" path="res://icon.svg" id="1_wogva"]
 [ext_resource type="Script" path="res://items/item.gd" id="2_aj80w"]
 [ext_resource type="Script" path="res://inventory/inventory.gd" id="2_fg4uh"]
+[ext_resource type="Texture2D" uid="uid://c0fu1alc5nmjb" path="res://z_materials/32x32_PixelWeapons_Free.png" id="4_ax0bl"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_t6ny6"]
+atlas = ExtResource("4_ax0bl")
+region = Rect2(99.4465, 2.56508, 23.3457, 23.7414)
 
 [sub_resource type="Resource" id="Resource_6h7j4"]
 script = ExtResource("2_aj80w")
 NAME = "equipable"
-TEXTURE = ExtResource("1_wogva")
+TEXTURE = SubResource("AtlasTexture_t6ny6")
 QUANTITY = 1
 SPEED = 0
 KNOCKBACK = 0
 HEALTH = 100
 DAME = 1123
 CRTDAME = 100
-CRTRATE = 50
 DEF = 0
 TYPE = 5
 STACKABLE = false
@@ -35,7 +39,6 @@ KNOCKBACK = 0
 HEALTH = 0
 DAME = 1000
 CRTDAME = 1000
-CRTRATE = 20
 DEF = 0
 TYPE = 2
 STACKABLE = false
@@ -55,11 +58,10 @@ KNOCKBACK = 0
 HEALTH = 0
 DAME = 0
 CRTDAME = 0
-CRTRATE = 0
 DEF = 0
 TYPE = 0
 STACKABLE = true
-COMSUMABLE = false
+COMSUMABLE = true
 IS_EQUIPED = false
 DESCRIPTION = ""
 STAR = 0

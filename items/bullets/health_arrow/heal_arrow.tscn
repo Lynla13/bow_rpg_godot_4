@@ -1,0 +1,62 @@
+[gd_scene load_steps=9 format=3 uid="uid://bofcxfauwx3sp"]
+
+[ext_resource type="Script" path="res://items/bullets/base_arrow/arrow_base.gd" id="1_oc4m6"]
+[ext_resource type="Texture2D" uid="uid://bnsoyjjlwddh7" path="res://z_materials/weapon/arrow_heath.png" id="2_0a6rv"]
+[ext_resource type="Script" path="res://states/finite_state_machine.gd" id="3_1effv"]
+[ext_resource type="Script" path="res://items/bullets/z_states/arrow_fire.gd" id="5_7hgh0"]
+[ext_resource type="Script" path="res://items/bullets/thunder_arrow/state/arrow_collide.gd" id="6_g0lnl"]
+[ext_resource type="Script" path="res://items/bullets/z_states/arrow_out.gd" id="6_u38ju"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_bqcfr"]
+radius = 2.0
+
+[sub_resource type="Gradient" id="Gradient_ebtaj"]
+offsets = PackedFloat32Array(0, 0.513333, 0.933333, 1)
+colors = PackedColorArray(0, 0.307947, 1.92523e-07, 1, 0.791283, 0.998645, 0.742147, 1, 0.479194, 0.998865, 0.223727, 1, 1, 1, 1, 1)
+
+[node name="base" type="Area2D"]
+z_index = -1
+disable_mode = 1
+collision_layer = 2
+collision_mask = 12
+gravity_space_override = 1
+gravity = 9.8
+script = ExtResource("1_oc4m6")
+mass = null
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(43, 0)
+shape = SubResource("CircleShape2D_bqcfr")
+
+[node name="ArrowBase" type="Sprite2D" parent="."]
+position = Vector2(26, -4.17232e-07)
+rotation = 0.794359
+scale = Vector2(1.41, 1.41)
+texture = ExtResource("2_0a6rv")
+
+[node name="FiniteStateMachine" type="Node" parent="." node_paths=PackedStringArray("current_state")]
+script = ExtResource("3_1effv")
+current_state = NodePath("Arrow_Fire")
+
+[node name="Health_Arrow_Collide" type="Node" parent="FiniteStateMachine"]
+script = ExtResource("6_g0lnl")
+
+[node name="Arrow_Fire" type="Node" parent="FiniteStateMachine" node_paths=PackedStringArray("actor")]
+script = ExtResource("5_7hgh0")
+actor = NodePath("../..")
+
+[node name="Arrow_Out" type="Node" parent="FiniteStateMachine" node_paths=PackedStringArray("actor")]
+script = ExtResource("6_u38ju")
+actor = NodePath("../..")
+
+[node name="CPUParticles2D" type="CPUParticles2D" parent="."]
+position = Vector2(55, 0)
+lifetime = 1.2
+gravity = Vector2(-100, 0)
+tangential_accel_min = -22.22
+tangential_accel_max = 76.77
+scale_amount_min = 2.0
+scale_amount_max = 7.0
+color = Color(0.263545, 0.865732, 2.69532e-06, 1)
+color_ramp = SubResource("Gradient_ebtaj")
+hue_variation_max = 0.98

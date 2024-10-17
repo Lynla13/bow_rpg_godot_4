@@ -1,0 +1,48 @@
+[gd_scene load_steps=8 format=3 uid="uid://dtknnvmywqyv3"]
+
+[ext_resource type="Script" path="res://items/bullets/base_arrow/arrow_base.gd" id="1_j4oaw"]
+[ext_resource type="Texture2D" uid="uid://l0rxa20mjvta" path="res://z_materials/weapon/arrow_base.png" id="2_1r88g"]
+[ext_resource type="Script" path="res://states/finite_state_machine.gd" id="3_sijm3"]
+[ext_resource type="Script" path="res://items/bullets/base_arrow/state/arrow_collide.gd" id="4_kjinf"]
+[ext_resource type="Script" path="res://items/bullets/z_states/arrow_fire.gd" id="5_iwi8k"]
+[ext_resource type="Script" path="res://items/bullets/z_states/arrow_out.gd" id="6_oovbw"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_bqcfr"]
+radius = 2.0
+
+[node name="base" type="Area2D"]
+z_index = -1
+disable_mode = 1
+collision_layer = 2
+collision_mask = 12
+gravity_space_override = 1
+gravity = 9.8
+script = ExtResource("1_j4oaw")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(43, 0)
+shape = SubResource("CircleShape2D_bqcfr")
+
+[node name="ArrowBase" type="Sprite2D" parent="."]
+position = Vector2(26, -4.17232e-07)
+rotation = 0.794359
+scale = Vector2(1.41, 1.41)
+texture = ExtResource("2_1r88g")
+
+[node name="FiniteStateMachine" type="Node" parent="." node_paths=PackedStringArray("current_state")]
+script = ExtResource("3_sijm3")
+current_state = NodePath("Arrow_Fire")
+
+[node name="Base_Arrow_Collide" type="Node" parent="FiniteStateMachine" node_paths=PackedStringArray("actor")]
+script = ExtResource("4_kjinf")
+actor = NodePath("../..")
+
+[node name="Arrow_Fire" type="Node" parent="FiniteStateMachine" node_paths=PackedStringArray("actor")]
+script = ExtResource("5_iwi8k")
+actor = NodePath("../..")
+
+[node name="Arrow_Out" type="Node" parent="FiniteStateMachine" node_paths=PackedStringArray("actor")]
+script = ExtResource("6_oovbw")
+actor = NodePath("../..")
+
+[connection signal="body_entered" from="." to="FiniteStateMachine/Base_Arrow_Collide" method="_on_arrow_fire__collie_data"]

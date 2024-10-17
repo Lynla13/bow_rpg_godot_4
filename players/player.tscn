@@ -7,12 +7,12 @@
 [ext_resource type="Script" path="res://states/player_hurt.gd" id="4_okw53"]
 [ext_resource type="Script" path="res://states/player_dash.gd" id="8_0ichm"]
 [ext_resource type="Script" path="res://states/player_run.gd" id="8_wmsuh"]
-[ext_resource type="Texture2D" uid="uid://lt2fk5s7df6w" path="res://materials/character/character_base0001.png" id="9_gye41"]
 [ext_resource type="Script" path="res://states/player_jump.gd" id="9_hf5dx"]
 [ext_resource type="Script" path="res://states/player_walk.gd" id="9_xh0qx"]
-[ext_resource type="Texture2D" uid="uid://dh4j2hhsjutv3" path="res://materials/character/character_base0002.png" id="10_t4b50"]
-[ext_resource type="Texture2D" uid="uid://c6pnclpm6usyt" path="res://materials/character/character_base0003.png" id="11_wv1g3"]
-[ext_resource type="Texture2D" uid="uid://bgju7fbuksgs5" path="res://materials/character/character_base0004.png" id="12_asj8a"]
+[ext_resource type="Texture2D" uid="uid://lt2fk5s7df6w" path="res://z_materials/character/character_base0001.png" id="10_h7w3u"]
+[ext_resource type="Texture2D" uid="uid://dh4j2hhsjutv3" path="res://z_materials/character/character_base0002.png" id="11_creoa"]
+[ext_resource type="Texture2D" uid="uid://c6pnclpm6usyt" path="res://z_materials/character/character_base0003.png" id="12_kc1qf"]
+[ext_resource type="Texture2D" uid="uid://bgju7fbuksgs5" path="res://z_materials/character/character_base0004.png" id="13_jj22i"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_rqbti"]
 size = Vector2(11.0186, 31.5143)
@@ -21,7 +21,7 @@ size = Vector2(11.0186, 31.5143)
 animations = [{
 "frames": [{
 "duration": 1.0,
-"texture": ExtResource("9_gye41")
+"texture": ExtResource("10_h7w3u")
 }],
 "loop": true,
 "name": &"idle",
@@ -29,7 +29,7 @@ animations = [{
 }, {
 "frames": [{
 "duration": 1.0,
-"texture": ExtResource("10_t4b50")
+"texture": ExtResource("11_creoa")
 }],
 "loop": true,
 "name": &"jump",
@@ -37,16 +37,16 @@ animations = [{
 }, {
 "frames": [{
 "duration": 1.0,
-"texture": ExtResource("9_gye41")
+"texture": ExtResource("10_h7w3u")
 }, {
 "duration": 1.0,
-"texture": ExtResource("10_t4b50")
+"texture": ExtResource("11_creoa")
 }, {
 "duration": 1.0,
-"texture": ExtResource("11_wv1g3")
+"texture": ExtResource("12_kc1qf")
 }, {
 "duration": 1.0,
-"texture": ExtResource("12_asj8a")
+"texture": ExtResource("13_jj22i")
 }],
 "loop": true,
 "name": &"run",

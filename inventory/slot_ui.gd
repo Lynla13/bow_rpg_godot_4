@@ -11,7 +11,7 @@ signal _get_item_index (index)
 
 func _ready():
 	item_equiped.hide()
-	slot.hide ()
+	item_quantity.hide()
 	
 	
 func _display_item (item) :

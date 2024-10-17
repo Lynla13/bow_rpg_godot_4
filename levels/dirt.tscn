@@ -1,0 +1,32 @@
+[gd_scene load_steps=5 format=3 uid="uid://ckv6snsdvqsmo"]
+
+[ext_resource type="Script" path="res://levels/ground_eff.gd" id="1_pxi5s"]
+[ext_resource type="Texture2D" uid="uid://dkpxbgtvrl3ne" path="res://z_materials/Sprute.png" id="2_qxlxy"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_yn08c"]
+size = Vector2(62, 63)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_kiti6"]
+atlas = ExtResource("2_qxlxy")
+region = Rect2(193.232, 32.9374, 33.5037, 32.2314)
+
+[node name="dirt" type="StaticBody2D"]
+script = ExtResource("1_pxi5s")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(1, -0.5)
+shape = SubResource("RectangleShape2D_yn08c")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+scale = Vector2(2, 2)
+texture = SubResource("AtlasTexture_kiti6")
+
+[node name="particle" type="CPUParticles2D" parent="."]
+visible = false
+position = Vector2(-3, -30)
+randomness = 0.24
+emission_shape = 3
+emission_rect_extents = Vector2(10.98, 7.685)
+gravity = Vector2(0, -980)
+scale_amount_min = 3.0
+scale_amount_max = 5.0

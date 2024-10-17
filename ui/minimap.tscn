@@ -1,7 +1,7 @@
 [gd_scene load_steps=4 format=3 uid="uid://cb8tm0rlby324"]
 
 [ext_resource type="Script" path="res://ui/minimap.gd" id="1_bh657"]
-[ext_resource type="Texture2D" uid="uid://cookypwtjewgn" path="res://materials/Screenshot from 2024-06-13 18-43-36.png" id="2_6e45a"]
+[ext_resource type="Texture2D" uid="uid://cookypwtjewgn" path="res://z_materials/Screenshot from 2024-06-13 18-43-36.png" id="2_6e45a"]
 [ext_resource type="Texture2D" uid="uid://wgn3qrkrtwou" path="res://icon.svg" id="2_naihu"]
 
 [node name="minimap" type="SubViewportContainer"]

@@ -3,11 +3,12 @@ class_name WEAPON_CONTROLLER
 
 var smooth_mouse_pos : Vector2
 @export var weapon : ITEM
+@export var power = 40 
 @onready var projectie = $projectie
 @onready var isshot : bool = false
 @onready var timer = $Timer
 @onready var timer_2 = $Timer2
-
+const base_arrow = preload("res://items/bullets/base_arrow/arrow_base.tscn")
 
 # Called when the node enters the scene tree for the first time.
 
@@ -22,8 +23,7 @@ func _use_weapon (rotation) :
 
 # first click fire the arrow
 func _shot(rotation) :
-	var power = 60
-	Physiz.__fire_arrow(projectie.global_position, rotation, power)
+	Physiz.__fire_arrow(projectie.global_position, rotation, power, base_arrow)
 
 
 #seccond click use power
