@@ -1,0 +1,122 @@
+[gd_scene load_steps=4 format=3 uid="uid://ccpiwm7qtedjs"]
+
+[ext_resource type="Script" path="res://inventory/tooltip_inventory.gd" id="1_u1431"]
+[ext_resource type="Texture2D" uid="uid://wgn3qrkrtwou" path="res://icon.svg" id="2_bhmhe"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_mcuv3"]
+bg_color = Color(0.192157, 0.713726, 0.972549, 0.105882)
+
+[node name="Tooltip_inventory" type="Control"]
+texture_filter = 1
+custom_minimum_size = Vector2(200, 600)
+layout_mode = 3
+anchor_left = 0.372
+anchor_top = -0.006
+anchor_right = 0.545
+offset_left = -0.544006
+offset_top = -0.112
+offset_right = 0.159973
+offset_bottom = 396.0
+script = ExtResource("1_u1431")
+metadata/_edit_use_anchors_ = true
+
+[node name="ItemPopup" type="PopupPanel" parent="."]
+unique_name_in_owner = true
+position = Vector2i(420, 0)
+size = Vector2i(220, 600)
+visible = true
+max_size = Vector2i(16384, 600)
+theme_override_styles/panel = SubResource("StyleBoxFlat_mcuv3")
+
+[node name="MarginContainer" type="MarginContainer" parent="ItemPopup"]
+custom_minimum_size = Vector2(200, 200)
+offset_right = 220.0
+offset_bottom = 640.0
+theme_override_constants/margin_left = 10
+theme_override_constants/margin_top = 20
+theme_override_constants/margin_right = 10
+theme_override_constants/margin_bottom = 20
+
+[node name="VBoxContainer" type="VBoxContainer" parent="ItemPopup/MarginContainer"]
+clip_contents = true
+custom_minimum_size = Vector2(200, 600)
+layout_mode = 2
+theme_override_constants/separation = 10
+
+[node name="TextureRect" type="TextureRect" parent="ItemPopup/MarginContainer/VBoxContainer"]
+texture_filter = 1
+custom_minimum_size = Vector2(200, 200)
+layout_mode = 2
+texture = ExtResource("2_bhmhe")
+stretch_mode = 4
+
+[node name="Name" type="RichTextLabel" parent="ItemPopup/MarginContainer/VBoxContainer"]
+layout_mode = 2
+theme_override_colors/default_color = Color(1, 1, 1, 1)
+theme_override_colors/font_shadow_color = Color(0, 0, 0, 1)
+theme_override_constants/shadow_outline_size = 2
+theme_override_font_sizes/normal_font_size = 30
+theme_override_font_sizes/bold_font_size = 1
+text = "Namehihioahsif
+"
+fit_content = true
+
+[node name="Attack" type="RichTextLabel" parent="ItemPopup/MarginContainer/VBoxContainer"]
+visible = false
+layout_mode = 2
+theme_override_colors/default_color = Color(0.819608, 0.0313726, 0, 1)
+theme_override_colors/font_shadow_color = Color(0, 0, 0, 1)
+theme_override_font_sizes/normal_font_size = 20
+text = "Atck
+"
+fit_content = true
+
+[node name="Crit" type="RichTextLabel" parent="ItemPopup/MarginContainer/VBoxContainer"]
+visible = false
+layout_mode = 2
+theme_override_colors/default_color = Color(0.20682, 0.958456, 0, 1)
+theme_override_colors/font_shadow_color = Color(0, 0, 0, 1)
+theme_override_font_sizes/normal_font_size = 20
+text = "Crit
+"
+fit_content = true
+
+[node name="Knockback" type="RichTextLabel" parent="ItemPopup/MarginContainer/VBoxContainer"]
+visible = false
+layout_mode = 2
+theme_override_colors/default_color = Color(0.20682, 0.958456, 0, 1)
+theme_override_colors/font_shadow_color = Color(0, 0, 0, 1)
+theme_override_font_sizes/normal_font_size = 20
+text = "Knckback
+"
+fit_content = true
+
+[node name="Health" type="RichTextLabel" parent="ItemPopup/MarginContainer/VBoxContainer"]
+visible = false
+layout_mode = 2
+theme_override_colors/default_color = Color(0.20682, 0.958456, 0, 1)
+theme_override_colors/font_shadow_color = Color(0, 0, 0, 1)
+theme_override_font_sizes/normal_font_size = 20
+text = "Health
+"
+fit_content = true
+
+[node name="Effects" type="RichTextLabel" parent="ItemPopup/MarginContainer/VBoxContainer"]
+visible = false
+layout_mode = 2
+theme_override_colors/default_color = Color(0.20682, 0.958456, 0, 1)
+theme_override_colors/font_shadow_color = Color(0, 0, 0, 1)
+theme_override_font_sizes/normal_font_size = 20
+text = "Effects
+"
+fit_content = true
+
+[node name="Description" type="RichTextLabel" parent="ItemPopup/MarginContainer/VBoxContainer"]
+visible = false
+layout_mode = 2
+theme_override_colors/default_color = Color(0.80897, 0.508246, 0.211051, 1)
+theme_override_colors/font_shadow_color = Color(0, 0, 0, 1)
+theme_override_font_sizes/normal_font_size = 16
+text = "
+"
+fit_content = true

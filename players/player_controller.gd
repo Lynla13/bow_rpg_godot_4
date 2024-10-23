@@ -114,4 +114,3 @@ func _on_remove_equip (item):
 	if item.TYPE == 4 : 		cape.get_child (0).queue_free()
 	if item.TYPE == 5 : 		weapon.get_child (0).queue_free()
 
-

@@ -19,7 +19,6 @@ func _exit_state () ->void :
 func _physics_process (delta) : 
 	print ("this is collide")
 	# stsend emit to dam sauce to deal dame to moner
-	
 func _collide () :
 	pass
 

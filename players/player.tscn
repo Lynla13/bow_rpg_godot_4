@@ -134,3 +134,13 @@ position = Vector2(3, -6)
 scale = Vector2(1.96875, 1.84375)
 sprite_frames = SubResource("SpriteFrames_hwusa")
 animation = &"jump"
+
+[node name="Camera2D" type="Camera2D" parent="."]
+position = Vector2(-119, -523)
+anchor_mode = 0
+zoom = Vector2(1.17, 1.17)
+limit_bottom = 1800
+position_smoothing_enabled = true
+position_smoothing_speed = 0.9
+drag_horizontal_enabled = true
+drag_top_margin = 0.05

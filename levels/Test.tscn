@@ -1,4 +1,4 @@
-[gd_scene load_steps=10 format=3 uid="uid://cihh3pramsxc3"]
+[gd_scene load_steps=9 format=3 uid="uid://cihh3pramsxc3"]
 
 [ext_resource type="PackedScene" uid="uid://ck6s8c57xh16q" path="res://enemies/dame_text.tscn" id="1_5qm4x"]
 [ext_resource type="PackedScene" uid="uid://ckrhensk25mia" path="res://items/projectie.tscn" id="1_icy0e"]
@@ -7,7 +7,6 @@
 [ext_resource type="PackedScene" uid="uid://ckv6snsdvqsmo" path="res://levels/dirt.tscn" id="3_8e2u3"]
 [ext_resource type="PackedScene" uid="uid://cb8tm0rlby324" path="res://ui/minimap.tscn" id="3_rah3r"]
 [ext_resource type="PackedScene" uid="uid://28ntltbbj4x0" path="res://ui/menu.tscn" id="4_p84ku"]
-[ext_resource type="Script" path="res://players/camera.gd" id="6_7fmjg"]
 [ext_resource type="PackedScene" uid="uid://dk83gyva5s0yc" path="res://enemies/pupet/pupet.tscn" id="7_7743p"]
 
 [node name="Test" type="Node2D"]
@@ -236,19 +235,15 @@ grow_vertical = 1
 anchors_preset = 1
 anchor_left = 1.0
 anchor_right = 1.0
-offset_left = -200.0
-offset_right = 0.0
+offset_left = -201.0
+offset_top = -1.0
+offset_right = -1.0
+offset_bottom = 199.0
 grow_horizontal = 0
 target = NodePath("../../Player")
 
 [node name="Player" parent="." instance=ExtResource("2_w4km3")]
 position = Vector2(3481, 1451)
-
-[node name="Camera2D" type="Camera2D" parent="Player"]
-position = Vector2(96, -57)
-offset = Vector2(300, -150)
-zoom = Vector2(1.295, 1.295)
-script = ExtResource("6_7fmjg")
 
 [node name="Pupet" parent="." instance=ExtResource("7_7743p")]
 position = Vector2(4642, 1147)

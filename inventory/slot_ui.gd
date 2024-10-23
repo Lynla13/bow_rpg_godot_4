@@ -39,5 +39,19 @@ func _on_item_use():
 		item_f._is_use()
 		if item_f.IS_EQUIPED :	item_equiped.show()
 		elif !item_f.IS_EQUIPED:	item_equiped.hide ()
+		print (item_f.IS_EQUIPED)
 #		ItemUse._remove_item(item_f)
 		#ItemUse._on_description_item (item_f) 
+
+
+func _on_mouse_entered():
+	if item_f is ITEM and item_f != null: 
+		Popups.PopupContent(item_f.TEXTURE,item_f.NAME, item_f.CRTDAME, item_f.DAME, item_f.KNOCKBACK, item_f.HEALTH, item_f.DESCRIPTION)
+		Popups.ItemPopup()
+
+
+
+func _on_mouse_exited():
+	Popups.HideItemPopup()
+
+# make pikup item

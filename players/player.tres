@@ -4,8 +4,8 @@
 
 [resource]
 script = ExtResource("1_r7164")
-NAME = "sdasd"
-STATUS = 0
+NAME = "Player"
+STATUS = 1
 DETAIL = ""
 SPEED = 300
 HEALTH = 0

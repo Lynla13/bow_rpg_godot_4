@@ -1,7 +1,10 @@
-[gd_scene load_steps=4 format=3 uid="uid://culqsqaxv33q6"]
+[gd_scene load_steps=5 format=3 uid="uid://culqsqaxv33q6"]
 
 [ext_resource type="Script" path="res://ui/quick_slot_ui.gd" id="1_il4k4"]
 [ext_resource type="Texture2D" uid="uid://sjk6h1b85grx" path="res://z_materials/ui_big_pieces.png" id="2_75swb"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_g4bjs"]
+bg_color = Color(0.192157, 0.713726, 0.972549, 0)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_hc54y"]
 atlas = ExtResource("2_75swb")
@@ -24,6 +27,7 @@ custom_minimum_size = Vector2(50, 50)
 layout_mode = 0
 offset_right = 40.0
 offset_bottom = 40.0
+theme_override_styles/panel = SubResource("StyleBoxFlat_g4bjs")
 
 [node name="Texture2" type="TextureRect" parent="."]
 custom_minimum_size = Vector2(65, 50)
@@ -45,3 +49,6 @@ offset_bottom = 43.0
 custom_minimum_size = Vector2(35, 35)
 layout_mode = 2
 expand_mode = 1
+
+[connection signal="mouse_entered" from="." to="." method="_on_mouse_entered"]
+[connection signal="mouse_exited" from="." to="." method="_on_mouse_exited"]

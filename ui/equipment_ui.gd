@@ -1,10 +1,10 @@
 extends Control
 
-@onready var hat = $HSplitContainer/MarginContainer2/VBoxContainer/MarginContainer/hat
-@onready var top = $HSplitContainer/MarginContainer2/VBoxContainer/MarginContainer2/top
-@onready var bottom = $HSplitContainer/MarginContainer2/VBoxContainer/MarginContainer3/bottom
-@onready var cape = $HSplitContainer/MarginContainer2/VBoxContainer/MarginContainer4/cape
-@onready var weapon = $HSplitContainer/MarginContainer2/VBoxContainer/weapon/weapon
+@onready var hat = $Panel/HSplitContainer/MarginContainer2/VBoxContainer/MarginContainer/hat
+@onready var top = $Panel/HSplitContainer/MarginContainer2/VBoxContainer/MarginContainer2/top
+@onready var bottom = $Panel/HSplitContainer/MarginContainer2/VBoxContainer/MarginContainer3/bottom
+@onready var cape = $Panel/HSplitContainer/MarginContainer2/VBoxContainer/MarginContainer4/cape
+@onready var weapon = $Panel/HSplitContainer/MarginContainer2/VBoxContainer/weapon/weapon
 
 # Called when the node enters the scene tree for the first time.
 #func _ready():

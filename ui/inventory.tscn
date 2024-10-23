@@ -1,11 +1,21 @@
-[gd_scene load_steps=4 format=3 uid="uid://bex2gcotd3bdr"]
+[gd_scene load_steps=6 format=3 uid="uid://bex2gcotd3bdr"]
 
 [ext_resource type="PackedScene" uid="uid://bil1qwxhe0gk5" path="res://ui/slot.tscn" id="1_7ckxf"]
 [ext_resource type="Script" path="res://inventory/inventory_ui.gd" id="1_qkvvg"]
 [ext_resource type="Resource" uid="uid://bkhvfh7uxwryb" path="res://inventory/player_inventory.tres" id="2_r0n4b"]
 
+[sub_resource type="Theme" id="Theme_dpbyu"]
+default_base_scale = 1.26
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_2ho70"]
+bg_color = Color(0.1908, 0.713527, 0.970886, 0.231373)
+border_width_left = 35
+border_width_top = 20
+border_width_bottom = 20
+border_color = Color(0.1908, 0.713527, 0.970886, 0.231373)
+
 [node name="inventory" type="Control"]
-custom_minimum_size = Vector2(310, 200)
+custom_minimum_size = Vector2(390, 400)
 layout_mode = 3
 anchors_preset = 0
 offset_right = 40.0
@@ -14,23 +24,24 @@ script = ExtResource("1_qkvvg")
 inventory = ExtResource("2_r0n4b")
 
 [node name="Container" type="MarginContainer" parent="."]
-custom_minimum_size = Vector2(310, 200)
+custom_minimum_size = Vector2(390, 400)
 layout_mode = 0
 offset_right = 320.0
 offset_bottom = 400.0
-theme_override_constants/margin_left = 10
-theme_override_constants/margin_top = 20
-theme_override_constants/margin_right = 10
-theme_override_constants/margin_bottom = 10
+theme = SubResource("Theme_dpbyu")
 
 [node name="Panel" type="ScrollContainer" parent="Container"]
-custom_minimum_size = Vector2(310, 200)
+light_mask = 2
+visibility_layer = 3
+custom_minimum_size = Vector2(315, 380)
 layout_mode = 2
+theme_override_styles/panel = SubResource("StyleBoxFlat_2ho70")
 
 [node name="item_container" type="GridContainer" parent="Container/Panel"]
+custom_minimum_size = Vector2(300, 390)
 layout_mode = 2
-theme_override_constants/h_separation = 10
-theme_override_constants/v_separation = 10
+theme_override_constants/h_separation = 14
+theme_override_constants/v_separation = 14
 columns = 5
 
 [node name="Slot2" parent="Container/Panel/item_container" instance=ExtResource("1_7ckxf")]
@@ -76,6 +87,138 @@ layout_mode = 2
 layout_mode = 2
 
 [node name="Slot16" parent="Container/Panel/item_container" instance=ExtResource("1_7ckxf")]
+layout_mode = 2
+
+[node name="Slot17" parent="Container/Panel/item_container" instance=ExtResource("1_7ckxf")]
+layout_mode = 2
+
+[node name="Slot18" parent="Container/Panel/item_container" instance=ExtResource("1_7ckxf")]
+layout_mode = 2
+
+[node name="Slot19" parent="Container/Panel/item_container" instance=ExtResource("1_7ckxf")]
+layout_mode = 2
+
+[node name="Slot20" parent="Container/Panel/item_container" instance=ExtResource("1_7ckxf")]
+layout_mode = 2
+
+[node name="Slot21" parent="Container/Panel/item_container" instance=ExtResource("1_7ckxf")]
+layout_mode = 2
+
+[node name="Slot22" parent="Container/Panel/item_container" instance=ExtResource("1_7ckxf")]
+layout_mode = 2
+
+[node name="Slot23" parent="Container/Panel/item_container" instance=ExtResource("1_7ckxf")]
+layout_mode = 2
+
+[node name="Slot24" parent="Container/Panel/item_container" instance=ExtResource("1_7ckxf")]
+layout_mode = 2
+
+[node name="Slot25" parent="Container/Panel/item_container" instance=ExtResource("1_7ckxf")]
+layout_mode = 2
+
+[node name="Slot26" parent="Container/Panel/item_container" instance=ExtResource("1_7ckxf")]
+layout_mode = 2
+
+[node name="Slot27" parent="Container/Panel/item_container" instance=ExtResource("1_7ckxf")]
+layout_mode = 2
+
+[node name="Slot28" parent="Container/Panel/item_container" instance=ExtResource("1_7ckxf")]
+layout_mode = 2
+
+[node name="Slot29" parent="Container/Panel/item_container" instance=ExtResource("1_7ckxf")]
+layout_mode = 2
+
+[node name="Slot30" parent="Container/Panel/item_container" instance=ExtResource("1_7ckxf")]
+layout_mode = 2
+
+[node name="Slot31" parent="Container/Panel/item_container" instance=ExtResource("1_7ckxf")]
+layout_mode = 2
+
+[node name="Slot32" parent="Container/Panel/item_container" instance=ExtResource("1_7ckxf")]
+layout_mode = 2
+
+[node name="Slot33" parent="Container/Panel/item_container" instance=ExtResource("1_7ckxf")]
+layout_mode = 2
+
+[node name="Slot34" parent="Container/Panel/item_container" instance=ExtResource("1_7ckxf")]
+layout_mode = 2
+
+[node name="Slot35" parent="Container/Panel/item_container" instance=ExtResource("1_7ckxf")]
+layout_mode = 2
+
+[node name="Slot36" parent="Container/Panel/item_container" instance=ExtResource("1_7ckxf")]
+layout_mode = 2
+
+[node name="Slot37" parent="Container/Panel/item_container" instance=ExtResource("1_7ckxf")]
+layout_mode = 2
+
+[node name="Slot38" parent="Container/Panel/item_container" instance=ExtResource("1_7ckxf")]
+layout_mode = 2
+
+[node name="Slot39" parent="Container/Panel/item_container" instance=ExtResource("1_7ckxf")]
+layout_mode = 2
+
+[node name="Slot40" parent="Container/Panel/item_container" instance=ExtResource("1_7ckxf")]
+layout_mode = 2
+
+[node name="Slot41" parent="Container/Panel/item_container" instance=ExtResource("1_7ckxf")]
+layout_mode = 2
+
+[node name="Slot42" parent="Container/Panel/item_container" instance=ExtResource("1_7ckxf")]
+layout_mode = 2
+
+[node name="Slot43" parent="Container/Panel/item_container" instance=ExtResource("1_7ckxf")]
+layout_mode = 2
+
+[node name="Slot44" parent="Container/Panel/item_container" instance=ExtResource("1_7ckxf")]
+layout_mode = 2
+
+[node name="Slot45" parent="Container/Panel/item_container" instance=ExtResource("1_7ckxf")]
+layout_mode = 2
+
+[node name="Slot46" parent="Container/Panel/item_container" instance=ExtResource("1_7ckxf")]
+layout_mode = 2
+
+[node name="Slot47" parent="Container/Panel/item_container" instance=ExtResource("1_7ckxf")]
+layout_mode = 2
+
+[node name="Slot48" parent="Container/Panel/item_container" instance=ExtResource("1_7ckxf")]
+layout_mode = 2
+
+[node name="Slot49" parent="Container/Panel/item_container" instance=ExtResource("1_7ckxf")]
+layout_mode = 2
+
+[node name="Slot50" parent="Container/Panel/item_container" instance=ExtResource("1_7ckxf")]
+layout_mode = 2
+
+[node name="Slot51" parent="Container/Panel/item_container" instance=ExtResource("1_7ckxf")]
+layout_mode = 2
+
+[node name="Slot52" parent="Container/Panel/item_container" instance=ExtResource("1_7ckxf")]
+layout_mode = 2
+
+[node name="Slot53" parent="Container/Panel/item_container" instance=ExtResource("1_7ckxf")]
+layout_mode = 2
+
+[node name="Slot54" parent="Container/Panel/item_container" instance=ExtResource("1_7ckxf")]
+layout_mode = 2
+
+[node name="Slot55" parent="Container/Panel/item_container" instance=ExtResource("1_7ckxf")]
+layout_mode = 2
+
+[node name="Slot56" parent="Container/Panel/item_container" instance=ExtResource("1_7ckxf")]
+layout_mode = 2
+
+[node name="Slot57" parent="Container/Panel/item_container" instance=ExtResource("1_7ckxf")]
+layout_mode = 2
+
+[node name="Slot58" parent="Container/Panel/item_container" instance=ExtResource("1_7ckxf")]
+layout_mode = 2
+
+[node name="Slot59" parent="Container/Panel/item_container" instance=ExtResource("1_7ckxf")]
+layout_mode = 2
+
+[node name="Slot60" parent="Container/Panel/item_container" instance=ExtResource("1_7ckxf")]
 layout_mode = 2
 
 [node name="TextureRect" type="TextureRect" parent="Container/Panel"]

@@ -1,7 +1,14 @@
-[gd_scene load_steps=3 format=3 uid="uid://6umpoqfrstp4"]
+[gd_scene load_steps=4 format=3 uid="uid://6umpoqfrstp4"]
 
 [ext_resource type="PackedScene" uid="uid://culqsqaxv33q6" path="res://ui/quick_slot.tscn" id="1_736yb"]
 [ext_resource type="Script" path="res://ui/equipment_ui.gd" id="1_detle"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_igd6a"]
+content_margin_left = 0.0
+content_margin_top = 0.0
+content_margin_right = 0.0
+content_margin_bottom = 0.0
+bg_color = Color(0.1908, 0.713527, 0.970886, 0.231373)
 
 [node name="equipment" type="Control"]
 custom_minimum_size = Vector2(390, 400)
@@ -14,13 +21,19 @@ grow_vertical = 2
 size_flags_vertical = 8
 script = ExtResource("1_detle")
 
-[node name="HSplitContainer" type="HSplitContainer" parent="."]
-custom_minimum_size = Vector2(350, 350)
+[node name="Panel" type="Panel" parent="."]
+custom_minimum_size = Vector2(390, 400)
 layout_mode = 0
-offset_right = 40.0
-offset_bottom = 40.0
+offset_bottom = 300.0
+theme_override_styles/panel = SubResource("StyleBoxFlat_igd6a")
 
-[node name="MarginContainer2" type="MarginContainer" parent="HSplitContainer"]
+[node name="HSplitContainer" type="HSplitContainer" parent="Panel"]
+custom_minimum_size = Vector2(370, 350)
+layout_mode = 0
+offset_right = 350.0
+offset_bottom = 386.0
+
+[node name="MarginContainer2" type="MarginContainer" parent="Panel/HSplitContainer"]
 custom_minimum_size = Vector2(100, 350)
 layout_mode = 2
 theme_override_constants/margin_left = 10
@@ -28,58 +41,119 @@ theme_override_constants/margin_top = 10
 theme_override_constants/margin_right = 10
 theme_override_constants/margin_bottom = 10
 
-[node name="VBoxContainer" type="VBoxContainer" parent="HSplitContainer/MarginContainer2"]
+[node name="VBoxContainer" type="VBoxContainer" parent="Panel/HSplitContainer/MarginContainer2"]
 custom_minimum_size = Vector2(100, 350)
 layout_mode = 2
 
-[node name="MarginContainer" type="MarginContainer" parent="HSplitContainer/MarginContainer2/VBoxContainer"]
+[node name="MarginContainer" type="MarginContainer" parent="Panel/HSplitContainer/MarginContainer2/VBoxContainer"]
 layout_mode = 2
 theme_override_constants/margin_top = 10
 theme_override_constants/margin_bottom = 10
 
-[node name="hat" parent="HSplitContainer/MarginContainer2/VBoxContainer/MarginContainer" instance=ExtResource("1_736yb")]
+[node name="hat" parent="Panel/HSplitContainer/MarginContainer2/VBoxContainer/MarginContainer" instance=ExtResource("1_736yb")]
 layout_mode = 2
+tooltip_text = "HAT"
 
-[node name="MarginContainer2" type="MarginContainer" parent="HSplitContainer/MarginContainer2/VBoxContainer"]
-layout_mode = 2
-theme_override_constants/margin_top = 10
-theme_override_constants/margin_bottom = 10
-
-[node name="top" parent="HSplitContainer/MarginContainer2/VBoxContainer/MarginContainer2" instance=ExtResource("1_736yb")]
-layout_mode = 2
-
-[node name="MarginContainer3" type="MarginContainer" parent="HSplitContainer/MarginContainer2/VBoxContainer"]
+[node name="MarginContainer2" type="MarginContainer" parent="Panel/HSplitContainer/MarginContainer2/VBoxContainer"]
 layout_mode = 2
 theme_override_constants/margin_top = 10
 theme_override_constants/margin_bottom = 10
 
-[node name="bottom" parent="HSplitContainer/MarginContainer2/VBoxContainer/MarginContainer3" instance=ExtResource("1_736yb")]
+[node name="top" parent="Panel/HSplitContainer/MarginContainer2/VBoxContainer/MarginContainer2" instance=ExtResource("1_736yb")]
 layout_mode = 2
+tooltip_text = "TOP"
 
-[node name="MarginContainer4" type="MarginContainer" parent="HSplitContainer/MarginContainer2/VBoxContainer"]
-layout_mode = 2
-theme_override_constants/margin_top = 10
-theme_override_constants/margin_bottom = 10
-
-[node name="cape" parent="HSplitContainer/MarginContainer2/VBoxContainer/MarginContainer4" instance=ExtResource("1_736yb")]
-layout_mode = 2
-
-[node name="weapon" type="MarginContainer" parent="HSplitContainer/MarginContainer2/VBoxContainer"]
+[node name="MarginContainer3" type="MarginContainer" parent="Panel/HSplitContainer/MarginContainer2/VBoxContainer"]
 layout_mode = 2
 theme_override_constants/margin_top = 10
 theme_override_constants/margin_bottom = 10
 
-[node name="weapon" parent="HSplitContainer/MarginContainer2/VBoxContainer/weapon" instance=ExtResource("1_736yb")]
+[node name="bottom" parent="Panel/HSplitContainer/MarginContainer2/VBoxContainer/MarginContainer3" instance=ExtResource("1_736yb")]
 layout_mode = 2
+tooltip_text = "BOTTOM"
 
-[node name="MarginContainer" type="MarginContainer" parent="HSplitContainer"]
+[node name="MarginContainer4" type="MarginContainer" parent="Panel/HSplitContainer/MarginContainer2/VBoxContainer"]
+layout_mode = 2
+theme_override_constants/margin_top = 10
+theme_override_constants/margin_bottom = 10
+
+[node name="cape" parent="Panel/HSplitContainer/MarginContainer2/VBoxContainer/MarginContainer4" instance=ExtResource("1_736yb")]
+layout_mode = 2
+tooltip_text = "CAPE"
+
+[node name="weapon" type="MarginContainer" parent="Panel/HSplitContainer/MarginContainer2/VBoxContainer"]
+layout_mode = 2
+theme_override_constants/margin_top = 10
+theme_override_constants/margin_bottom = 10
+
+[node name="weapon" parent="Panel/HSplitContainer/MarginContainer2/VBoxContainer/weapon" instance=ExtResource("1_736yb")]
+layout_mode = 2
+tooltip_text = "WEAPON"
+
+[node name="MarginContainer" type="MarginContainer" parent="Panel/HSplitContainer"]
 custom_minimum_size = Vector2(100, 320)
 layout_mode = 2
-theme_override_constants/margin_left = 10
+theme_override_constants/margin_left = 0
 theme_override_constants/margin_top = 20
-theme_override_constants/margin_right = 10
+theme_override_constants/margin_right = 0
 theme_override_constants/margin_bottom = 10
 
-[node name="Panel" type="Panel" parent="HSplitContainer/MarginContainer"]
-custom_minimum_size = Vector2(0, 300)
+[node name="Panel" type="Panel" parent="Panel/HSplitContainer/MarginContainer"]
+clip_contents = true
+custom_minimum_size = Vector2(238, 300)
 layout_mode = 2
+theme_override_styles/panel = SubResource("StyleBoxFlat_igd6a")
+
+[node name="VBoxContainer" type="VBoxContainer" parent="Panel/HSplitContainer/MarginContainer/Panel"]
+custom_minimum_size = Vector2(238, 0)
+layout_mode = 0
+offset_left = 15.0
+offset_top = 30.0
+offset_right = 253.0
+offset_bottom = 325.0
+theme_override_constants/separation = 11
+
+[node name="Label" type="Label" parent="Panel/HSplitContainer/MarginContainer/Panel/VBoxContainer"]
+layout_mode = 2
+text = "STATUS"
+vertical_alignment = 1
+
+[node name="Line" type="Label" parent="Panel/HSplitContainer/MarginContainer/Panel/VBoxContainer"]
+show_behind_parent = true
+layout_mode = 2
+text = "======================"
+
+[node name="Atack" type="Label" parent="Panel/HSplitContainer/MarginContainer/Panel/VBoxContainer"]
+show_behind_parent = true
+layout_mode = 2
+text = "Attack: "
+
+[node name="Def" type="Label" parent="Panel/HSplitContainer/MarginContainer/Panel/VBoxContainer"]
+show_behind_parent = true
+layout_mode = 2
+text = "Defend: "
+
+[node name="Health" type="Label" parent="Panel/HSplitContainer/MarginContainer/Panel/VBoxContainer"]
+show_behind_parent = true
+layout_mode = 2
+text = "Health: "
+
+[node name="Mana" type="Label" parent="Panel/HSplitContainer/MarginContainer/Panel/VBoxContainer"]
+show_behind_parent = true
+layout_mode = 2
+text = "Mana: "
+
+[node name="Knockback" type="Label" parent="Panel/HSplitContainer/MarginContainer/Panel/VBoxContainer"]
+show_behind_parent = true
+layout_mode = 2
+text = "Knockback: "
+
+[node name="Hit" type="Label" parent="Panel/HSplitContainer/MarginContainer/Panel/VBoxContainer"]
+show_behind_parent = true
+layout_mode = 2
+text = "Hit: "
+
+[node name="Speed" type="Label" parent="Panel/HSplitContainer/MarginContainer/Panel/VBoxContainer"]
+show_behind_parent = true
+layout_mode = 2
+text = "Speed: "
