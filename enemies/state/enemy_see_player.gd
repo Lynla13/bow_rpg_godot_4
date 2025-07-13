@@ -22,7 +22,6 @@ func _exit_state () ->void :
 	set_physics_process(false)
 
 func _physics_process (delta) : 
-	print ("this is see player state")
 	_see_player (delta)
 	await get_tree().create_timer(0.5).timeout
 	warning.hide()

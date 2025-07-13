@@ -17,4 +17,3 @@ func _teleoprt (destination) :
 
 func __show_dame (dame, target) :
 	emit_signal("_show_dame", dame, target)
-

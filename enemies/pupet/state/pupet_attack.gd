@@ -52,4 +52,3 @@ func _move (delta) :
 func _attack (delta):
 	actor.velocity.x = -direction *actor.enemy_data.SPEED*delta
 	actor.velocity.y = -direction *actor.enemy_data.SPEED*delta
-

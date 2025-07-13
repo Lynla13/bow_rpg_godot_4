@@ -10,30 +10,24 @@ bg_color = Color(0.192157, 0.713726, 0.972549, 0.105882)
 texture_filter = 1
 custom_minimum_size = Vector2(200, 600)
 layout_mode = 3
-anchor_left = 0.372
-anchor_top = -0.006
-anchor_right = 0.545
-offset_left = -0.544006
-offset_top = -0.112
-offset_right = 0.159973
-offset_bottom = 396.0
+anchors_preset = 0
+offset_right = 200.0
+offset_bottom = 600.0
 script = ExtResource("1_u1431")
-metadata/_edit_use_anchors_ = true
 
 [node name="ItemPopup" type="PopupPanel" parent="."]
 unique_name_in_owner = true
-position = Vector2i(420, 0)
-size = Vector2i(220, 600)
+size = Vector2i(220, 16384)
 visible = true
-max_size = Vector2i(16384, 600)
+min_size = Vector2i(0, 16384)
 theme_override_styles/panel = SubResource("StyleBoxFlat_mcuv3")
 
 [node name="MarginContainer" type="MarginContainer" parent="ItemPopup"]
 custom_minimum_size = Vector2(200, 200)
 offset_right = 220.0
-offset_bottom = 640.0
+offset_bottom = 16384.0
 theme_override_constants/margin_left = 10
-theme_override_constants/margin_top = 20
+theme_override_constants/margin_top = 30
 theme_override_constants/margin_right = 10
 theme_override_constants/margin_bottom = 20
 
@@ -57,7 +51,8 @@ theme_override_colors/font_shadow_color = Color(0, 0, 0, 1)
 theme_override_constants/shadow_outline_size = 2
 theme_override_font_sizes/normal_font_size = 30
 theme_override_font_sizes/bold_font_size = 1
-text = "Namehihioahsif
+text = "minh hoa
+
 "
 fit_content = true
 

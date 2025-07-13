@@ -36,5 +36,3 @@ func _physics_process (delta) :
 		direction = -1
 		actor.velocity.x = direction *actor.enemy_data.SPEED*delta
 	
-
-

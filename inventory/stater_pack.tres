@@ -1,0 +1,73 @@
+[gd_resource type="Resource" script_class="INVENTORY" load_steps=11 format=3 uid="uid://citckq3b54dya"]
+
+[ext_resource type="Script" path="res://items/item.gd" id="1_s6det"]
+[ext_resource type="Script" path="res://inventory/inventory.gd" id="2_o8aji"]
+[ext_resource type="PackedScene" uid="uid://b6yx0rcvth7lg" path="res://items/weapons/bow.tscn" id="2_xwktg"]
+[ext_resource type="Texture2D" uid="uid://c0fu1alc5nmjb" path="res://z_materials/32x32_PixelWeapons_Free.png" id="3_sucao"]
+[ext_resource type="Texture2D" uid="uid://wgn3qrkrtwou" path="res://icon.svg" id="4_f17dl"]
+[ext_resource type="Resource" uid="uid://cpavne3bfhb4w" path="res://items/weapons/resources/bow_test.tres" id="5_mkxyi"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_t6ny6"]
+atlas = ExtResource("3_sucao")
+region = Rect2(99.4465, 2.56508, 23.3457, 23.7414)
+
+[sub_resource type="Resource" id="Resource_6h7j4"]
+script = ExtResource("1_s6det")
+NAME = "equipable"
+TEXTURE = SubResource("AtlasTexture_t6ny6")
+QUANTITY = 1
+SPEED = 0
+KNOCKBACK = 0
+HEALTH = 100
+DAME = 1123
+CRTDAME = -11
+DEF = 0
+TYPE = 5
+STACKABLE = false
+COMSUMABLE = false
+IS_EQUIPED = false
+DESCRIPTION = ""
+STAR = 0
+ITEM = ExtResource("2_xwktg")
+
+[sub_resource type="Resource" id="Resource_vaj8j"]
+script = ExtResource("1_s6det")
+NAME = "sdasdas"
+TEXTURE = ExtResource("4_f17dl")
+QUANTITY = 1
+SPEED = 0
+KNOCKBACK = 0
+HEALTH = 0
+DAME = 2
+CRTDAME = 1000
+DEF = 0
+TYPE = 5
+STACKABLE = false
+COMSUMABLE = false
+IS_EQUIPED = false
+DESCRIPTION = ""
+STAR = 0
+ITEM = ExtResource("2_xwktg")
+
+[sub_resource type="Resource" id="Resource_m8ath"]
+script = ExtResource("1_s6det")
+NAME = "hahaha"
+TEXTURE = ExtResource("4_f17dl")
+QUANTITY = 0
+SPEED = 0
+KNOCKBACK = 0
+HEALTH = 0
+DAME = 0
+CRTDAME = 0
+DEF = 0
+TYPE = 0
+STACKABLE = false
+COMSUMABLE = false
+IS_EQUIPED = false
+DESCRIPTION = "Hahahahaha
+"
+STAR = 0
+
+[resource]
+script = ExtResource("2_o8aji")
+items = Array[ExtResource("1_s6det")]([SubResource("Resource_6h7j4"), SubResource("Resource_vaj8j"), SubResource("Resource_m8ath"), ExtResource("5_mkxyi")])

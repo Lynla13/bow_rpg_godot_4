@@ -16,20 +16,18 @@ func _add_item_slot () :
 		return 0
 
 func _add_item (item: ITEM) :
+	var count : int = 0
 	for i in range(0, items.size()):
 		#check if dupplicate items
-		if items[i] is ITEM and items[i].NAME == item.NAME and item.TYPE <=1 : 
-			items [i].QUANTITY += 1
-			break
-		elif item.TYPE >= 2 :
-			items.insert(0, item)
-			break
-		elif items[i] == null and item.TYPE <=1 and _add_item_slot () == 1 :
-			items [i] = item
-		else :
-				emit_signal("_out_of_slot")
+		if items[i].NAME != item.NAME:
+			count += 1
+		elif item.TYPE == 0 and items[i].NAME == item.NAME: 
+				items [i].QUANTITY += item.QUANTITY
+		elif item.TYPE > 0 and item.TYPE <= 5 and items[i].NAME == item.NAME: 
+				Utlize.broken_satr += 100
+	if count == items.size() :
+		items.append(item)
 	emit_signal("_item_change")
-
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _remove_item_from_inventory (item):
 	#set item == null

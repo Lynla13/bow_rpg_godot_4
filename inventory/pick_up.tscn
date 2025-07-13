@@ -1,0 +1,33 @@
+[gd_scene load_steps=3 format=3 uid="uid://flpv105mm4ls"]
+
+[ext_resource type="Script" path="res://inventory/pick_up.gd" id="1_x3v7f"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_hy51p"]
+size = Vector2(23, 20.5)
+
+[node name="PickUp" type="CharacterBody2D"]
+collision_layer = 32
+collision_mask = 9
+script = ExtResource("1_x3v7f")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(22.5, 29.25)
+shape = SubResource("RectangleShape2D_hy51p")
+
+[node name="TextureRect" type="TextureRect" parent="."]
+custom_minimum_size = Vector2(30, 30)
+offset_right = 40.0
+offset_bottom = 40.0
+rotation = -9.40093e-05
+expand_mode = 1
+stretch_mode = 4
+
+[node name="front_eye" type="RayCast2D" parent="TextureRect"]
+position = Vector2(-8.00263, 27.9992)
+rotation = 1.57068
+scale = Vector2(1, 4.44)
+target_position = Vector2(-1.00752, 8.10806)
+
+[node name="back_eye" type="RayCast2D" parent="TextureRect"]
+position = Vector2(46.9975, 27.0044)
+target_position = Vector2(24.9999, 1.00237)

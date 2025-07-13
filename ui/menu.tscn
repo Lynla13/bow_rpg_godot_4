@@ -1,37 +1,67 @@
-[gd_scene load_steps=5 format=3 uid="uid://28ntltbbj4x0"]
+[gd_scene load_steps=4 format=3 uid="uid://28ntltbbj4x0"]
 
-[ext_resource type="Texture2D" uid="uid://wgn3qrkrtwou" path="res://icon.svg" id="1_iugar"]
+[ext_resource type="Script" path="res://ui/menu.gd" id="1_jaqqq"]
 [ext_resource type="PackedScene" uid="uid://bex2gcotd3bdr" path="res://ui/inventory.tscn" id="1_sx405"]
 [ext_resource type="PackedScene" uid="uid://6umpoqfrstp4" path="res://ui/equipment_ui.tscn" id="2_v67q0"]
 
-[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_lu0si"]
-texture = ExtResource("1_iugar")
-axis_stretch_horizontal = 1
-axis_stretch_vertical = 1
-region_rect = Rect2(0, 0, 64, 126.5)
-
 [node name="Menu" type="Control"]
-custom_minimum_size = Vector2(390, 400)
+custom_minimum_size = Vector2(600, 700)
 layout_mode = 3
-anchors_preset = 15
-anchor_right = 1.0
-anchor_bottom = 1.0
-offset_right = -328.0
-offset_bottom = 9.0
+anchor_left = 0.5
+anchor_top = 0.343
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -300.0
+offset_top = -98.264
+offset_right = 300.0
+offset_bottom = 200.0
 grow_horizontal = 2
 grow_vertical = 2
+script = ExtResource("1_jaqqq")
 
-[node name="TabContainer" type="TabContainer" parent="."]
-layout_mode = 2
-offset_right = 40.0
-offset_bottom = 40.0
-theme_override_constants/side_margin = 0
-theme_override_styles/tabbar_background = SubResource("StyleBoxTexture_lu0si")
-clip_tabs = false
+[node name="close_btn" type="Button" parent="."]
+custom_minimum_size = Vector2(50, 50)
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 1.137
+anchor_top = -0.17
+anchor_right = 1.22
+anchor_bottom = -0.17
+offset_left = -0.200073
+offset_bottom = 50.0
+grow_horizontal = 0
+text = "X
+"
 
-[node name="inventory" parent="TabContainer" instance=ExtResource("1_sx405")]
-layout_mode = 2
+[node name="Panel" type="Panel" parent="."]
+custom_minimum_size = Vector2(600, 100)
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.505
+anchor_top = -0.167
+anchor_right = 0.505
+anchor_bottom = -0.167
+offset_left = -303.0
+offset_top = -3.09999
+offset_right = 297.0
+offset_bottom = 92.9
+grow_horizontal = 2
 
-[node name="equipment" parent="TabContainer" instance=ExtResource("2_v67q0")]
-visible = false
-layout_mode = 2
+[node name="equipment" parent="." instance=ExtResource("2_v67q0")]
+layout_mode = 1
+anchor_left = 1.062
+anchor_right = 1.062
+anchor_bottom = 0.0
+offset_left = -0.200012
+offset_right = 389.8
+offset_bottom = 450.0
+grow_horizontal = 0
+grow_vertical = 1
+metadata/_edit_use_anchors_ = true
+
+[node name="inventory" parent="." instance=ExtResource("1_sx405")]
+layout_mode = 1
+metadata/_edit_use_anchors_ = true
+metadata/_edit_lock_ = true
+
+[connection signal="button_down" from="close_btn" to="." method="_on_close_btn_button_down"]

@@ -1,4 +1,6 @@
-[gd_scene load_steps=2 format=3 uid="uid://bpvp8q3d8078a"]
+[gd_scene load_steps=3 format=3 uid="uid://bpvp8q3d8078a"]
+
+[ext_resource type="Script" path="res://ui/home_ui.gd" id="1_xyrtm"]
 
 [sub_resource type="Theme" id="Theme_ep56h"]
 /fonts/Start = null
@@ -10,6 +12,7 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
+script = ExtResource("1_xyrtm")
 
 [node name="CanvasLayer" type="CanvasLayer" parent="."]
 
@@ -29,9 +32,11 @@ theme = SubResource("Theme_ep56h")
 text = "Start"
 
 [node name="Continue" type="Button" parent="CanvasLayer"]
-offset_right = 69.0
-offset_bottom = 54.0
-text = "Cntinue
+offset_left = 738.0
+offset_top = 206.0
+offset_right = 1108.0
+offset_bottom = 266.0
+text = "Continue
 
 "
 
@@ -62,3 +67,6 @@ offset_bottom = 24.256
 grow_horizontal = 0
 grow_vertical = 2
 text = "Credit"
+
+[connection signal="pressed" from="CanvasLayer/Start" to="." method="_on_start_pressed"]
+[connection signal="pressed" from="CanvasLayer/Credit" to="." method="_on_credit_pressed"]

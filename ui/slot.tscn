@@ -1,7 +1,6 @@
-[gd_scene load_steps=5 format=3 uid="uid://bil1qwxhe0gk5"]
+[gd_scene load_steps=4 format=3 uid="uid://bil1qwxhe0gk5"]
 
 [ext_resource type="Script" path="res://inventory/slot_ui.gd" id="1_b40hw"]
-[ext_resource type="Texture2D" uid="uid://wgn3qrkrtwou" path="res://icon.svg" id="1_lm4jo"]
 [ext_resource type="Texture2D" uid="uid://sjk6h1b85grx" path="res://z_materials/ui_big_pieces.png" id="3_a21eq"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_wcuqs"]
@@ -19,6 +18,7 @@ tooltip_text = "Hello"
 script = ExtResource("1_b40hw")
 
 [node name="default" type="TextureRect" parent="."]
+visible = false
 custom_minimum_size = Vector2(50, 50)
 layout_mode = 0
 offset_right = 40.0
@@ -29,12 +29,14 @@ expand_mode = 1
 stretch_mode = 4
 
 [node name="item_texture" type="TextureRect" parent="."]
-custom_minimum_size = Vector2(35, 35)
+modulate = Color(0.34902, 0.34902, 0.34902, 0.466667)
+z_index = 10
+custom_minimum_size = Vector2(45, 45)
 layout_mode = 0
-offset_left = 8.0
-offset_top = 7.0
-offset_right = 43.0
-offset_bottom = 42.0
+offset_left = 11.0
+offset_top = 10.0
+offset_right = 56.0
+offset_bottom = 55.0
 mouse_filter = 0
 mouse_default_cursor_shape = 2
 expand_mode = 1
@@ -42,26 +44,30 @@ stretch_mode = 4
 
 [node name="item_equiped" type="Label" parent="."]
 layout_mode = 2
-offset_left = 35.0
-offset_top = 27.0
-offset_right = 98.0
-offset_bottom = 51.0
+offset_left = 48.0
+offset_top = 37.0
+offset_right = 111.0
+offset_bottom = 61.0
 theme_override_colors/font_shadow_color = Color(0, 0, 0, 1)
 theme_override_font_sizes/font_size = 17
 text = "E"
+metadata/_edit_lock_ = true
 
 [node name="MarginContainer2" type="MarginContainer" parent="."]
 layout_mode = 0
-offset_left = 6.0
+offset_left = 11.0
 offset_top = -8.0
-offset_right = 53.0
+offset_right = 59.0
 offset_bottom = 32.0
-theme_override_constants/margin_left = 10
+theme_override_constants/margin_left = 34
+theme_override_constants/margin_top = 6
+metadata/_edit_lock_ = true
 
 [node name="item_quantity" type="Label" parent="MarginContainer2"]
 layout_mode = 2
 theme_override_colors/font_shadow_color = Color(0, 0, 0, 1)
-text = "100x"
+theme_override_font_sizes/font_size = 24
+text = "0"
 
 [node name="MarginContainer3" type="MarginContainer" parent="."]
 custom_minimum_size = Vector2(50, 50)
@@ -73,20 +79,16 @@ theme_override_constants/margin_left = 5
 theme_override_constants/margin_top = 5
 theme_override_constants/margin_right = 5
 theme_override_constants/margin_bottom = 5
+metadata/_edit_lock_ = true
 
-[node name="Equip" type="TouchScreenButton" parent="MarginContainer3"]
-modulate = Color(0.294118, 0.576471, 0.72549, 0)
-position = Vector2(2, 2)
-scale = Vector2(0.363, 0.354)
-texture_normal = ExtResource("1_lm4jo")
-
-[node name="Panel" type="Panel" parent="."]
-show_behind_parent = true
-layout_mode = 0
-offset_right = 51.0
-offset_bottom = 51.0
+[node name="equip" type="Button" parent="MarginContainer3"]
+modulate = Color(0.270588, 0.576471, 0.792157, 1)
+custom_minimum_size = Vector2(55, 55)
+layout_mode = 2
 mouse_filter = 1
+mouse_default_cursor_shape = 2
+metadata/_edit_lock_ = true
 
 [connection signal="mouse_entered" from="." to="." method="_on_mouse_entered"]
 [connection signal="mouse_exited" from="." to="." method="_on_mouse_exited"]
-[connection signal="pressed" from="MarginContainer3/Equip" to="." method="_on_item_use"]
+[connection signal="pressed" from="MarginContainer3/equip" to="." method="_on_item_use"]

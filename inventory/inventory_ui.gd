@@ -4,11 +4,13 @@ extends Node
 @export var inventory : INVENTORY
 
 func _ready():
-	inventory._item_change.connect(self._update_inventory)
-	ItemUse._reload.connect(self._update_inventory)
-	inventory._item_change.connect (inventory._make_item_unique)
-	inventory._make_item_unique () 
-	_update_inventory ()
+	if inventory :
+		inventory._item_change.connect(self._update_inventory)
+		ItemUse._reload.connect(self._update_inventory)
+		ItemUse._add_item.connect(inventory._add_item)
+		inventory._item_change.connect (inventory._make_item_unique)
+		inventory._make_item_unique () 
+		_update_inventory ()
 	
 # Called when the node enters the scene tree for the first time.
 func _update_inventory ():

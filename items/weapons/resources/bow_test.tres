@@ -1,6 +1,6 @@
 [gd_resource type="Resource" script_class="ITEM" load_steps=5 format=3 uid="uid://cpavne3bfhb4w"]
 
-[ext_resource type="PackedScene" uid="uid://b6yx0rcvth7lg" path="res://items/weapons/bow.tscn" id="1_i86ln"]
+[ext_resource type="PackedScene" uid="uid://cfjh2d6o3dsgo" path="res://items/weapons/bow_2.tscn" id="1_kkusw"]
 [ext_resource type="Script" path="res://items/item.gd" id="1_s3xu5"]
 [ext_resource type="Texture2D" uid="uid://c0fu1alc5nmjb" path="res://z_materials/32x32_PixelWeapons_Free.png" id="2_fmava"]
 
@@ -12,7 +12,7 @@ region = Rect2(99.7291, 67.1349, 25.2694, 26.4586)
 script = ExtResource("1_s3xu5")
 NAME = "Bow"
 TEXTURE = SubResource("AtlasTexture_j5ixd")
-QUANTITY = 100
+QUANTITY = 1
 SPEED = 0
 KNOCKBACK = 0
 HEALTH = 0
@@ -25,4 +25,4 @@ COMSUMABLE = false
 IS_EQUIPED = false
 DESCRIPTION = ""
 STAR = 0
-ITEM = ExtResource("1_i86ln")
+ITEM = ExtResource("1_kkusw")

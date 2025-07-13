@@ -1,8 +1,8 @@
 extends Control
 
+@onready var texture: TextureRect = $Texture
 
 # Called when the node enters the scene tree for the first time.
-@onready var texture = $MarginContainer/Texture
 var item_f
 func _ready():
 	texture.hide()
@@ -14,7 +14,7 @@ func _display_item_texture (item) :
 	else :
 		texture.hide()
 	item_f = item
-
+	
 
 
 func _on_mouse_entered():

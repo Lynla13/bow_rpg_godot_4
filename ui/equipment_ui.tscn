@@ -13,16 +13,15 @@ bg_color = Color(0.1908, 0.713527, 0.970886, 0.231373)
 [node name="equipment" type="Control"]
 custom_minimum_size = Vector2(390, 400)
 layout_mode = 3
-anchor_right = 0.514
-anchor_bottom = 0.843
-offset_right = -0.0799866
-offset_bottom = -0.0600281
+anchor_right = 0.359
+anchor_bottom = 0.625
+offset_right = -0.568024
 grow_vertical = 2
 size_flags_vertical = 8
 script = ExtResource("1_detle")
 
 [node name="Panel" type="Panel" parent="."]
-custom_minimum_size = Vector2(390, 400)
+custom_minimum_size = Vector2(100, 450)
 layout_mode = 0
 offset_bottom = 300.0
 theme_override_styles/panel = SubResource("StyleBoxFlat_igd6a")
@@ -36,7 +35,7 @@ offset_bottom = 386.0
 [node name="MarginContainer2" type="MarginContainer" parent="Panel/HSplitContainer"]
 custom_minimum_size = Vector2(100, 350)
 layout_mode = 2
-theme_override_constants/margin_left = 10
+theme_override_constants/margin_left = 17
 theme_override_constants/margin_top = 10
 theme_override_constants/margin_right = 10
 theme_override_constants/margin_bottom = 10
@@ -93,12 +92,14 @@ tooltip_text = "WEAPON"
 [node name="MarginContainer" type="MarginContainer" parent="Panel/HSplitContainer"]
 custom_minimum_size = Vector2(100, 320)
 layout_mode = 2
+size_flags_horizontal = 8
 theme_override_constants/margin_left = 0
 theme_override_constants/margin_top = 20
 theme_override_constants/margin_right = 0
 theme_override_constants/margin_bottom = 10
 
 [node name="Panel" type="Panel" parent="Panel/HSplitContainer/MarginContainer"]
+visible = false
 clip_contents = true
 custom_minimum_size = Vector2(238, 300)
 layout_mode = 2

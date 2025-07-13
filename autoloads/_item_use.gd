@@ -13,6 +13,7 @@ signal _description_item (item)
 signal _remove_equip (item)
 signal _remove_item (item)
 signal _fire ()
+signal _add_item (item)
 
 #reload signal is connect with update inventory
 #Connect to Player
@@ -36,6 +37,9 @@ func __remove_quickuse (_item) :
 func __add_quickuse (_item) :
 	emit_signal("_reload")
 	
+func __add_item (_item) :
+	emit_signal("_add_item", _item)
+	
 func __equip_item (_item) :
 	if _item is ITEM:
 		var x = _item.TYPE
@@ -47,16 +51,3 @@ func __equip_item (_item) :
 			5 :	equipment[4] = _item
 		emit_signal("_equip_item", _item)
 		emit_signal("_reload")
-
-func __remove_equip (_item): 
-	var x = _item.TYPE
-	match x :
-		1: 	equipment[0] = null
-		2 :	equipment[1] = null
-		3 :	equipment[2] = null
-		4 :	equipment[3] = null
-		5 :	equipment[4] = null
-	emit_signal("_remove_equip", _item)
-	emit_signal("_reload")
-
-

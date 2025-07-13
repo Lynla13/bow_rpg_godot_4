@@ -29,10 +29,9 @@ func _tween ():
 
 
 func _on_arrow_fire__collie_data(target):
-	print(target.get_collision_mask())
 	if target.get_collision_mask() >=3 :
 		DameControl._deal_dame(target)
-		if target.get_collision_layer() == 5 :
-			DameControl.is_crt = true
+		if target.get_collision_layer() < 32 :
+			DameControl.dddis_crt = true
 		else :	DameControl.is_crt = false
 		actor.queue_free()

@@ -31,5 +31,5 @@ func _on_arrow_fire__collie_data(target):
 	#DameSauce.
 	pass
 
-#todo : finizh the arrows
+
 #Send thunder to radius in a time

@@ -23,7 +23,8 @@ func _animation () :
 	animator.play("run")
 	
 func _physics_process(delta):
-	if Input.is_action_just_pressed("ui_accept"):
+	print ("Walk")
+	if Input.is_action_pressed("ui_accept"):
 		_jump.emit ()
 	else :
 		_move_left_right (delta)
@@ -31,11 +32,11 @@ func _physics_process(delta):
 func _move_left_right (delta):
 	var direction = Input.get_axis("ui_left", "ui_right")
 	if direction:
+		if direction == -1:	 Utlize.direction = -1
+		else:	Utlize.direction = 1
 		actor.velocity.x = direction * player_data.SPEED
 	elif Input.is_action_just_pressed("ui_accept"):
 		_jump.emit ()
 	else :
 		_idle.emit ()
 			
-
-

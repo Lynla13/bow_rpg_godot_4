@@ -2,7 +2,7 @@ extends Resource
 class_name ITEM
 
 enum _type 
-{item,top,bottom,hat,cape,weapon}
+{item,top,bottom,hat,cape,weapon, out}
 @export var NAME : String
 @export var TEXTURE : Texture
 @export_range(1, 200) var QUANTITY : int
@@ -35,4 +35,5 @@ func _is_use () :
 			IS_EQUIPED = !IS_EQUIPED
 			# AUTOLOAD
 			if IS_EQUIPED :	ItemUse.__equip_item(self)
-			elif IS_EQUIPED == false:	ItemUse.__remove_equip(self)
+	elif QUANTITY <=0 : 
+		TYPE = 6

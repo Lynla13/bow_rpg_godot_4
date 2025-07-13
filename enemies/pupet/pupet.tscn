@@ -14,8 +14,8 @@
 [ext_resource type="Script" path="res://enemies/state/enemy_hurt.gd" id="8_y7da2"]
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_8y1ws"]
-radius = 16.0
-height = 66.0
+radius = 11.0
+height = 64.0
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_n6u5i"]
 animations = [{

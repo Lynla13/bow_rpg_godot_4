@@ -15,20 +15,32 @@ border_width_bottom = 20
 border_color = Color(0.1908, 0.713527, 0.970886, 0.231373)
 
 [node name="inventory" type="Control"]
-custom_minimum_size = Vector2(390, 400)
+custom_minimum_size = Vector2(600, 700)
 layout_mode = 3
-anchors_preset = 0
-offset_right = 40.0
-offset_bottom = 40.0
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -300.0
+offset_top = -350.0
+offset_right = 300.0
+offset_bottom = 350.0
+grow_horizontal = 2
+grow_vertical = 2
+size_flags_horizontal = 4
 script = ExtResource("1_qkvvg")
 inventory = ExtResource("2_r0n4b")
 
 [node name="Container" type="MarginContainer" parent="."]
-custom_minimum_size = Vector2(390, 400)
+custom_minimum_size = Vector2(600, 700)
 layout_mode = 0
 offset_right = 320.0
 offset_bottom = 400.0
 theme = SubResource("Theme_dpbyu")
+
+[node name="TextureRect" type="TextureRect" parent="Container"]
+layout_mode = 2
 
 [node name="Panel" type="ScrollContainer" parent="Container"]
 light_mask = 2
@@ -38,11 +50,11 @@ layout_mode = 2
 theme_override_styles/panel = SubResource("StyleBoxFlat_2ho70")
 
 [node name="item_container" type="GridContainer" parent="Container/Panel"]
-custom_minimum_size = Vector2(300, 390)
+custom_minimum_size = Vector2(530, 600)
 layout_mode = 2
-theme_override_constants/h_separation = 14
-theme_override_constants/v_separation = 14
-columns = 5
+theme_override_constants/h_separation = 28
+theme_override_constants/v_separation = 25
+columns = 7
 
 [node name="Slot2" parent="Container/Panel/item_container" instance=ExtResource("1_7ckxf")]
 layout_mode = 2
@@ -219,7 +231,4 @@ layout_mode = 2
 layout_mode = 2
 
 [node name="Slot60" parent="Container/Panel/item_container" instance=ExtResource("1_7ckxf")]
-layout_mode = 2
-
-[node name="TextureRect" type="TextureRect" parent="Container/Panel"]
 layout_mode = 2

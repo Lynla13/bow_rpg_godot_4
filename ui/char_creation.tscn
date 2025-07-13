@@ -1,0 +1,321 @@
+[gd_scene load_steps=6 format=3 uid="uid://cio6tar1ghvce"]
+
+[ext_resource type="Script" path="res://ui/char_creation_ui.gd" id="1_bh5g4"]
+[ext_resource type="PackedScene" uid="uid://bv75iulx2oydl" path="res://players/player.tscn" id="1_iga0u"]
+[ext_resource type="PackedScene" uid="uid://bil1qwxhe0gk5" path="res://ui/slot.tscn" id="1_ihn3w"]
+[ext_resource type="Resource" uid="uid://citckq3b54dya" path="res://inventory/stater_pack.tres" id="2_0jifw"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_vq74h"]
+size = Vector2(198.5, 20)
+
+[node name="charCreation" type="Control"]
+custom_minimum_size = Vector2(650, 800)
+layout_mode = 3
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -300.0
+offset_top = -300.0
+offset_right = 300.0
+offset_bottom = 300.0
+grow_horizontal = 2
+grow_vertical = 2
+size_flags_horizontal = 4
+script = ExtResource("1_bh5g4")
+inventory = ExtResource("2_0jifw")
+
+[node name="VSplitContainer" type="VSplitContainer" parent="."]
+layout_mode = 0
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="title" type="Panel" parent="VSplitContainer"]
+custom_minimum_size = Vector2(600, 100)
+layout_mode = 2
+
+[node name="charCreation" type="Label" parent="VSplitContainer/title"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -274.5
+offset_top = -41.5
+offset_right = 274.5
+offset_bottom = 41.5
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_font_sizes/font_size = 60
+text = "Character Creation"
+vertical_alignment = 1
+
+[node name="Panel" type="Panel" parent="VSplitContainer"]
+custom_minimum_size = Vector2(650, 600)
+layout_mode = 2
+
+[node name="HBoxContainer" type="HBoxContainer" parent="VSplitContainer/Panel"]
+custom_minimum_size = Vector2(650, 600)
+layout_mode = 0
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="CenterContainer" type="CenterContainer" parent="VSplitContainer/Panel/HBoxContainer"]
+custom_minimum_size = Vector2(300, 200)
+layout_mode = 2
+
+[node name="Panel" type="Panel" parent="VSplitContainer/Panel/HBoxContainer/CenterContainer"]
+custom_minimum_size = Vector2(250, 400)
+layout_mode = 2
+
+[node name="Camera2D" type="Camera2D" parent="VSplitContainer/Panel/HBoxContainer/CenterContainer/Panel"]
+position = Vector2(306, 191)
+
+[node name="Player" parent="VSplitContainer/Panel/HBoxContainer/CenterContainer/Panel" instance=ExtResource("1_iga0u")]
+position = Vector2(145, 248)
+scale = Vector2(5, 5)
+
+[node name="Panel" type="StaticBody2D" parent="VSplitContainer/Panel/HBoxContainer/CenterContainer/Panel"]
+collision_layer = 8
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="VSplitContainer/Panel/HBoxContainer/CenterContainer/Panel/Panel"]
+position = Vector2(119, 304)
+shape = SubResource("RectangleShape2D_vq74h")
+
+[node name="CollisionShape2D3" type="CollisionShape2D" parent="VSplitContainer/Panel/HBoxContainer/CenterContainer/Panel/Panel"]
+position = Vector2(311, 221)
+shape = SubResource("RectangleShape2D_vq74h")
+
+[node name="CollisionShape2D2" type="CollisionShape2D" parent="VSplitContainer/Panel/HBoxContainer/CenterContainer/Panel/Panel"]
+position = Vector2(-57, 217)
+shape = SubResource("RectangleShape2D_vq74h")
+
+[node name="Panel2" type="StaticBody2D" parent="VSplitContainer/Panel/HBoxContainer/CenterContainer/Panel"]
+collision_layer = 8
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="VSplitContainer/Panel/HBoxContainer/CenterContainer/Panel/Panel2"]
+position = Vector2(126, 50)
+shape = SubResource("RectangleShape2D_vq74h")
+
+[node name="CenterContainer2" type="CenterContainer" parent="VSplitContainer/Panel/HBoxContainer"]
+custom_minimum_size = Vector2(300, 600)
+layout_mode = 2
+
+[node name="ScrollContainer" type="ScrollContainer" parent="VSplitContainer/Panel/HBoxContainer/CenterContainer2"]
+custom_minimum_size = Vector2(300, 500)
+layout_mode = 2
+size_flags_horizontal = 4
+horizontal_scroll_mode = 0
+vertical_scroll_mode = 2
+
+[node name="CenterContainer" type="CenterContainer" parent="VSplitContainer/Panel/HBoxContainer/CenterContainer2/ScrollContainer"]
+custom_minimum_size = Vector2(300, 600)
+layout_mode = 2
+
+[node name="VBoxContainer" type="VBoxContainer" parent="VSplitContainer/Panel/HBoxContainer/CenterContainer2/ScrollContainer/CenterContainer"]
+custom_minimum_size = Vector2(0, 600)
+layout_mode = 2
+
+[node name="item_container" type="GridContainer" parent="VSplitContainer/Panel/HBoxContainer/CenterContainer2/ScrollContainer/CenterContainer/VBoxContainer"]
+z_index = 2
+custom_minimum_size = Vector2(260, 250)
+layout_mode = 2
+theme_override_constants/h_separation = 14
+theme_override_constants/v_separation = 14
+columns = 4
+
+[node name="Slot2" parent="VSplitContainer/Panel/HBoxContainer/CenterContainer2/ScrollContainer/CenterContainer/VBoxContainer/item_container" instance=ExtResource("1_ihn3w")]
+layout_mode = 2
+
+[node name="Slot3" parent="VSplitContainer/Panel/HBoxContainer/CenterContainer2/ScrollContainer/CenterContainer/VBoxContainer/item_container" instance=ExtResource("1_ihn3w")]
+layout_mode = 2
+
+[node name="Slot4" parent="VSplitContainer/Panel/HBoxContainer/CenterContainer2/ScrollContainer/CenterContainer/VBoxContainer/item_container" instance=ExtResource("1_ihn3w")]
+layout_mode = 2
+
+[node name="Slot5" parent="VSplitContainer/Panel/HBoxContainer/CenterContainer2/ScrollContainer/CenterContainer/VBoxContainer/item_container" instance=ExtResource("1_ihn3w")]
+layout_mode = 2
+
+[node name="Slot6" parent="VSplitContainer/Panel/HBoxContainer/CenterContainer2/ScrollContainer/CenterContainer/VBoxContainer/item_container" instance=ExtResource("1_ihn3w")]
+layout_mode = 2
+
+[node name="Slot7" parent="VSplitContainer/Panel/HBoxContainer/CenterContainer2/ScrollContainer/CenterContainer/VBoxContainer/item_container" instance=ExtResource("1_ihn3w")]
+layout_mode = 2
+
+[node name="Slot8" parent="VSplitContainer/Panel/HBoxContainer/CenterContainer2/ScrollContainer/CenterContainer/VBoxContainer/item_container" instance=ExtResource("1_ihn3w")]
+layout_mode = 2
+
+[node name="Slot9" parent="VSplitContainer/Panel/HBoxContainer/CenterContainer2/ScrollContainer/CenterContainer/VBoxContainer/item_container" instance=ExtResource("1_ihn3w")]
+layout_mode = 2
+
+[node name="Slot10" parent="VSplitContainer/Panel/HBoxContainer/CenterContainer2/ScrollContainer/CenterContainer/VBoxContainer/item_container" instance=ExtResource("1_ihn3w")]
+layout_mode = 2
+
+[node name="Slot11" parent="VSplitContainer/Panel/HBoxContainer/CenterContainer2/ScrollContainer/CenterContainer/VBoxContainer/item_container" instance=ExtResource("1_ihn3w")]
+layout_mode = 2
+
+[node name="Slot12" parent="VSplitContainer/Panel/HBoxContainer/CenterContainer2/ScrollContainer/CenterContainer/VBoxContainer/item_container" instance=ExtResource("1_ihn3w")]
+layout_mode = 2
+
+[node name="Slot13" parent="VSplitContainer/Panel/HBoxContainer/CenterContainer2/ScrollContainer/CenterContainer/VBoxContainer/item_container" instance=ExtResource("1_ihn3w")]
+layout_mode = 2
+
+[node name="Slot14" parent="VSplitContainer/Panel/HBoxContainer/CenterContainer2/ScrollContainer/CenterContainer/VBoxContainer/item_container" instance=ExtResource("1_ihn3w")]
+layout_mode = 2
+
+[node name="Slot15" parent="VSplitContainer/Panel/HBoxContainer/CenterContainer2/ScrollContainer/CenterContainer/VBoxContainer/item_container" instance=ExtResource("1_ihn3w")]
+layout_mode = 2
+
+[node name="Slot16" parent="VSplitContainer/Panel/HBoxContainer/CenterContainer2/ScrollContainer/CenterContainer/VBoxContainer/item_container" instance=ExtResource("1_ihn3w")]
+layout_mode = 2
+
+[node name="Slot17" parent="VSplitContainer/Panel/HBoxContainer/CenterContainer2/ScrollContainer/CenterContainer/VBoxContainer/item_container" instance=ExtResource("1_ihn3w")]
+layout_mode = 2
+
+[node name="Slot18" parent="VSplitContainer/Panel/HBoxContainer/CenterContainer2/ScrollContainer/CenterContainer/VBoxContainer/item_container" instance=ExtResource("1_ihn3w")]
+layout_mode = 2
+
+[node name="Slot19" parent="VSplitContainer/Panel/HBoxContainer/CenterContainer2/ScrollContainer/CenterContainer/VBoxContainer/item_container" instance=ExtResource("1_ihn3w")]
+layout_mode = 2
+
+[node name="Slot20" parent="VSplitContainer/Panel/HBoxContainer/CenterContainer2/ScrollContainer/CenterContainer/VBoxContainer/item_container" instance=ExtResource("1_ihn3w")]
+layout_mode = 2
+
+[node name="Slot21" parent="VSplitContainer/Panel/HBoxContainer/CenterContainer2/ScrollContainer/CenterContainer/VBoxContainer/item_container" instance=ExtResource("1_ihn3w")]
+layout_mode = 2
+
+[node name="Slot22" parent="VSplitContainer/Panel/HBoxContainer/CenterContainer2/ScrollContainer/CenterContainer/VBoxContainer/item_container" instance=ExtResource("1_ihn3w")]
+layout_mode = 2
+
+[node name="Slot23" parent="VSplitContainer/Panel/HBoxContainer/CenterContainer2/ScrollContainer/CenterContainer/VBoxContainer/item_container" instance=ExtResource("1_ihn3w")]
+layout_mode = 2
+
+[node name="Slot24" parent="VSplitContainer/Panel/HBoxContainer/CenterContainer2/ScrollContainer/CenterContainer/VBoxContainer/item_container" instance=ExtResource("1_ihn3w")]
+layout_mode = 2
+
+[node name="Slot25" parent="VSplitContainer/Panel/HBoxContainer/CenterContainer2/ScrollContainer/CenterContainer/VBoxContainer/item_container" instance=ExtResource("1_ihn3w")]
+layout_mode = 2
+
+[node name="Slot26" parent="VSplitContainer/Panel/HBoxContainer/CenterContainer2/ScrollContainer/CenterContainer/VBoxContainer/item_container" instance=ExtResource("1_ihn3w")]
+layout_mode = 2
+
+[node name="Slot27" parent="VSplitContainer/Panel/HBoxContainer/CenterContainer2/ScrollContainer/CenterContainer/VBoxContainer/item_container" instance=ExtResource("1_ihn3w")]
+layout_mode = 2
+
+[node name="Slot28" parent="VSplitContainer/Panel/HBoxContainer/CenterContainer2/ScrollContainer/CenterContainer/VBoxContainer/item_container" instance=ExtResource("1_ihn3w")]
+layout_mode = 2
+
+[node name="Slot29" parent="VSplitContainer/Panel/HBoxContainer/CenterContainer2/ScrollContainer/CenterContainer/VBoxContainer/item_container" instance=ExtResource("1_ihn3w")]
+layout_mode = 2
+
+[node name="Slot30" parent="VSplitContainer/Panel/HBoxContainer/CenterContainer2/ScrollContainer/CenterContainer/VBoxContainer/item_container" instance=ExtResource("1_ihn3w")]
+layout_mode = 2
+
+[node name="Slot31" parent="VSplitContainer/Panel/HBoxContainer/CenterContainer2/ScrollContainer/CenterContainer/VBoxContainer/item_container" instance=ExtResource("1_ihn3w")]
+layout_mode = 2
+
+[node name="Slot32" parent="VSplitContainer/Panel/HBoxContainer/CenterContainer2/ScrollContainer/CenterContainer/VBoxContainer/item_container" instance=ExtResource("1_ihn3w")]
+layout_mode = 2
+
+[node name="Slot33" parent="VSplitContainer/Panel/HBoxContainer/CenterContainer2/ScrollContainer/CenterContainer/VBoxContainer/item_container" instance=ExtResource("1_ihn3w")]
+layout_mode = 2
+
+[node name="Slot34" parent="VSplitContainer/Panel/HBoxContainer/CenterContainer2/ScrollContainer/CenterContainer/VBoxContainer/item_container" instance=ExtResource("1_ihn3w")]
+layout_mode = 2
+
+[node name="Slot35" parent="VSplitContainer/Panel/HBoxContainer/CenterContainer2/ScrollContainer/CenterContainer/VBoxContainer/item_container" instance=ExtResource("1_ihn3w")]
+layout_mode = 2
+
+[node name="Slot36" parent="VSplitContainer/Panel/HBoxContainer/CenterContainer2/ScrollContainer/CenterContainer/VBoxContainer/item_container" instance=ExtResource("1_ihn3w")]
+layout_mode = 2
+
+[node name="Slot37" parent="VSplitContainer/Panel/HBoxContainer/CenterContainer2/ScrollContainer/CenterContainer/VBoxContainer/item_container" instance=ExtResource("1_ihn3w")]
+layout_mode = 2
+
+[node name="Slot38" parent="VSplitContainer/Panel/HBoxContainer/CenterContainer2/ScrollContainer/CenterContainer/VBoxContainer/item_container" instance=ExtResource("1_ihn3w")]
+layout_mode = 2
+
+[node name="Slot39" parent="VSplitContainer/Panel/HBoxContainer/CenterContainer2/ScrollContainer/CenterContainer/VBoxContainer/item_container" instance=ExtResource("1_ihn3w")]
+layout_mode = 2
+
+[node name="Slot40" parent="VSplitContainer/Panel/HBoxContainer/CenterContainer2/ScrollContainer/CenterContainer/VBoxContainer/item_container" instance=ExtResource("1_ihn3w")]
+layout_mode = 2
+
+[node name="Slot41" parent="VSplitContainer/Panel/HBoxContainer/CenterContainer2/ScrollContainer/CenterContainer/VBoxContainer/item_container" instance=ExtResource("1_ihn3w")]
+layout_mode = 2
+
+[node name="Slot42" parent="VSplitContainer/Panel/HBoxContainer/CenterContainer2/ScrollContainer/CenterContainer/VBoxContainer/item_container" instance=ExtResource("1_ihn3w")]
+layout_mode = 2
+
+[node name="Slot43" parent="VSplitContainer/Panel/HBoxContainer/CenterContainer2/ScrollContainer/CenterContainer/VBoxContainer/item_container" instance=ExtResource("1_ihn3w")]
+layout_mode = 2
+
+[node name="Slot44" parent="VSplitContainer/Panel/HBoxContainer/CenterContainer2/ScrollContainer/CenterContainer/VBoxContainer/item_container" instance=ExtResource("1_ihn3w")]
+layout_mode = 2
+
+[node name="Slot45" parent="VSplitContainer/Panel/HBoxContainer/CenterContainer2/ScrollContainer/CenterContainer/VBoxContainer/item_container" instance=ExtResource("1_ihn3w")]
+layout_mode = 2
+
+[node name="Slot46" parent="VSplitContainer/Panel/HBoxContainer/CenterContainer2/ScrollContainer/CenterContainer/VBoxContainer/item_container" instance=ExtResource("1_ihn3w")]
+layout_mode = 2
+
+[node name="Slot47" parent="VSplitContainer/Panel/HBoxContainer/CenterContainer2/ScrollContainer/CenterContainer/VBoxContainer/item_container" instance=ExtResource("1_ihn3w")]
+layout_mode = 2
+
+[node name="Slot48" parent="VSplitContainer/Panel/HBoxContainer/CenterContainer2/ScrollContainer/CenterContainer/VBoxContainer/item_container" instance=ExtResource("1_ihn3w")]
+layout_mode = 2
+
+[node name="Slot49" parent="VSplitContainer/Panel/HBoxContainer/CenterContainer2/ScrollContainer/CenterContainer/VBoxContainer/item_container" instance=ExtResource("1_ihn3w")]
+layout_mode = 2
+
+[node name="Slot50" parent="VSplitContainer/Panel/HBoxContainer/CenterContainer2/ScrollContainer/CenterContainer/VBoxContainer/item_container" instance=ExtResource("1_ihn3w")]
+layout_mode = 2
+
+[node name="Slot51" parent="VSplitContainer/Panel/HBoxContainer/CenterContainer2/ScrollContainer/CenterContainer/VBoxContainer/item_container" instance=ExtResource("1_ihn3w")]
+layout_mode = 2
+
+[node name="Slot52" parent="VSplitContainer/Panel/HBoxContainer/CenterContainer2/ScrollContainer/CenterContainer/VBoxContainer/item_container" instance=ExtResource("1_ihn3w")]
+layout_mode = 2
+
+[node name="Slot53" parent="VSplitContainer/Panel/HBoxContainer/CenterContainer2/ScrollContainer/CenterContainer/VBoxContainer/item_container" instance=ExtResource("1_ihn3w")]
+layout_mode = 2
+
+[node name="Slot54" parent="VSplitContainer/Panel/HBoxContainer/CenterContainer2/ScrollContainer/CenterContainer/VBoxContainer/item_container" instance=ExtResource("1_ihn3w")]
+layout_mode = 2
+
+[node name="Slot55" parent="VSplitContainer/Panel/HBoxContainer/CenterContainer2/ScrollContainer/CenterContainer/VBoxContainer/item_container" instance=ExtResource("1_ihn3w")]
+layout_mode = 2
+
+[node name="Slot56" parent="VSplitContainer/Panel/HBoxContainer/CenterContainer2/ScrollContainer/CenterContainer/VBoxContainer/item_container" instance=ExtResource("1_ihn3w")]
+layout_mode = 2
+
+[node name="Slot57" parent="VSplitContainer/Panel/HBoxContainer/CenterContainer2/ScrollContainer/CenterContainer/VBoxContainer/item_container" instance=ExtResource("1_ihn3w")]
+layout_mode = 2
+
+[node name="Slot58" parent="VSplitContainer/Panel/HBoxContainer/CenterContainer2/ScrollContainer/CenterContainer/VBoxContainer/item_container" instance=ExtResource("1_ihn3w")]
+layout_mode = 2
+
+[node name="Slot59" parent="VSplitContainer/Panel/HBoxContainer/CenterContainer2/ScrollContainer/CenterContainer/VBoxContainer/item_container" instance=ExtResource("1_ihn3w")]
+layout_mode = 2
+
+[node name="Slot60" parent="VSplitContainer/Panel/HBoxContainer/CenterContainer2/ScrollContainer/CenterContainer/VBoxContainer/item_container" instance=ExtResource("1_ihn3w")]
+layout_mode = 2
+
+[node name="accept_btn" type="Button" parent="."]
+custom_minimum_size = Vector2(200, 70)
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.689
+anchor_top = 0.95
+anchor_right = 0.689
+anchor_bottom = 0.95
+offset_left = 0.150024
+offset_top = -6.10352e-05
+offset_right = 200.15
+offset_bottom = 69.9999
+text = "Apcept"
+metadata/_edit_use_anchors_ = true
+
+[connection signal="pressed" from="accept_btn" to="." method="_on_accept_btn_pressed"]

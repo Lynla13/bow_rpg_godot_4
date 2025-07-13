@@ -11,7 +11,6 @@ func _ready():
 	miss.hide()
 	Physiz._show_dame.connect(self._dame_text)
 
-
 func _dame_text (dame, target) :
 	if DameControl.is_crt :
 		_normal_dame (crit_dame,dame,target)

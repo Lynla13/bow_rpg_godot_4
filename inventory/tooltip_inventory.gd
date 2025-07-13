@@ -62,4 +62,5 @@ func ItemPopup() :
 	%ItemPopup.popup()
 
 func HideItemPopup() :
-	%ItemPopup.hide()
+	pass
+	#%ItemPopup.hide()

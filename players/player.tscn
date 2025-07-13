@@ -120,8 +120,25 @@ script = ExtResource("9_hf5dx")
 actor = NodePath("../../..")
 player = ExtResource("2_dcxem")
 animator = NodePath("../../../Animation")
+jump_height = 200.0
+jump_time_to_peak = 0.5
+jump_time_to_descent = 0.3
 
 [node name="CanvasLayer" type="CanvasLayer" parent="."]
+visible = false
+
+[node name="Camera_slider" type="HSlider" parent="CanvasLayer"]
+custom_minimum_size = Vector2(100, 0)
+anchors_preset = 3
+anchor_left = 1.0
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -100.0
+offset_top = -16.0
+grow_horizontal = 0
+grow_vertical = 0
+step = 0.1
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 position = Vector2(-3.5, -10.5)
@@ -136,11 +153,11 @@ sprite_frames = SubResource("SpriteFrames_hwusa")
 animation = &"jump"
 
 [node name="Camera2D" type="Camera2D" parent="."]
+visible = false
 position = Vector2(-119, -523)
 anchor_mode = 0
 zoom = Vector2(1.17, 1.17)
-limit_bottom = 1800
+limit_bottom = 2700
 position_smoothing_enabled = true
 position_smoothing_speed = 0.9
-drag_horizontal_enabled = true
 drag_top_margin = 0.05
